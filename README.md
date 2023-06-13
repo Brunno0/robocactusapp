@@ -1,6 +1,7 @@
 # Robôcactus
 
-![Robôcactus](./imagens/robo-cactus.png)
+<img src="https://github.com/Brunno0/robocactusapp/blob/29ece1e3ea93bc574926a10374164f26a2b3d084/src/assests/robocactus.png" alt="Robôcactus" width="300">
+
 
 ## Introdução
 
