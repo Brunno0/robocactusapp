@@ -7,6 +7,10 @@
 
 Começaremos nossa jornada nas áreas de robótica, programação e desenvolvimento de tecnologias. Utilizaremos a plataforma Arduino como ferramenta para introduzir os conhecimentos necessários ao seu desenvolvimento. Também aprenderemos os princípios da robótica, programação de robôs, montagem, conexões elétricas, sensores, etc. Ao final dessa jornada, estaremos prontos para construir nosso primeiro projeto robótico juntos.
 
+Primeira versão do app:
+[robocactusapp.surge.sh](https://robocactusapp.surge.sh)
+
+
 ## Sobre o Projeto
 
 O Robôcactus é um projeto criado no sertão brasileiro com o intuito de aproximar a robótica educacional às escolas de todo o país. Acreditamos que a robótica é uma ferramenta poderosa para estimular o aprendizado e desenvolver habilidades essenciais, como pensamento lógico, resolução de problemas e trabalho em equipe.
