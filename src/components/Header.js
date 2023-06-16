@@ -1,4 +1,3 @@
-import { ReactNode } from 'react';
 import {
   Box,
   Flex,
@@ -10,43 +9,49 @@ import {
   MenuList,
   MenuItem,
   MenuDivider,
-  useDisclosure,
   useColorModeValue,
   Stack,
   useColorMode,
   Center,
+  IconButton,
+  
 } from '@chakra-ui/react';
-import { Image } from '@chakra-ui/react'
 import robocactus from '../assests/robocactus.png'
-import { MoonIcon, SunIcon } from '@chakra-ui/icons';
+import { AddIcon, EditIcon, ExternalLinkIcon, HamburgerIcon, MoonIcon, RepeatIcon, SunIcon } from '@chakra-ui/icons';
 
 
 export default function Nav() {
   const { colorMode, toggleColorMode } = useColorMode();
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
-
-
-  const NavLink = ({ children }: { children: ReactNode }) => (
-    <Link
-      px={2}
-      py={1}
-      rounded={'md'}
-      _hover={{
-        textDecoration: 'none',
-        bg: useColorModeValue('gray.200', 'gray.700'),
-      }}
-      href={'#'}>
-      {children}
-    </Link>
-  );
 
   return (
     <>
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <Box>
-          ROBOCACTUS          
+          <Menu>
+  <MenuButton
+    as={IconButton}
+    aria-label='Options'
+    icon={<HamburgerIcon />}
+    variant='outline'
+  />
+  <MenuList>
+    
+    <MenuItem icon={<AddIcon />} command='⌘T'>
+      New Tab
+    </MenuItem>
+    <MenuItem icon={<ExternalLinkIcon />} command='⌘N'>
+      New Window
+    </MenuItem>
+    <MenuItem icon={<RepeatIcon />} command='⌘⇧N'>
+      Open Closed Tab
+    </MenuItem>
+    <MenuItem icon={<EditIcon />} command='⌘O'>
+      Open File...
+    </MenuItem>
+  </MenuList>
+</Menu>
+         
           </Box>
           <Button>Home</Button>
           <Button>Sobre</Button>
@@ -85,16 +90,17 @@ export default function Nav() {
                   </Center>
                   <br />
                   <MenuDivider />
-                  <MenuItem>Your Servers</MenuItem>
-                  <MenuItem>Account Settings</MenuItem>
+                  <MenuItem>Seus pontos</MenuItem>
+                  <MenuItem>Configurações</MenuItem>
                   <MenuItem>Logout</MenuItem>
                 </MenuList>
               </Menu>
             </Stack>
           </Flex>
         </Flex>
+        
       </Box>
-
+      
     </>
   );
 }
