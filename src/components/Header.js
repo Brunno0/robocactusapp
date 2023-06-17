@@ -1,4 +1,3 @@
-import { ReactNode } from 'react';
 import {
   Box,
   Flex,
@@ -91,8 +90,8 @@ export default function Nav() {
                   </Center>
                   <br />
                   <MenuDivider />
-                  <MenuItem>Your Servers</MenuItem>
-                  <MenuItem>Account Settings</MenuItem>
+                  <MenuItem>Seus pontos</MenuItem>
+                  <MenuItem>Configurações</MenuItem>
                   <MenuItem>Logout</MenuItem>
                 </MenuList>
               </Menu>
