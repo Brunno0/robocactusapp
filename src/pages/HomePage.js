@@ -76,7 +76,7 @@ const HomePage = () => {
             title="Módulo II - E o Arduino, que tal?"
             text="Neste módulo, daremos início aos nossos estudos sobre o Arduino, uma plataforma versátil e poderosa. Veremos o hardware Arduino Uno, que é essencial para a robótica e automação de processos. Também exploraremos o software Arduino, uma ferramenta de programação que permite criar projetos incríveis. E, para consolidar o aprendizado, teremos uma atividade prática relacionada ao módulo. Prepare-se para expandir seu conhecimento e explorar o mundo da tecnologia por meio do Arduino."
             img="https://upload.wikimedia.org/wikipedia/commons/7/71/Arduino-uno-perspective-transparent.png"
-            left={!isMobile}
+            left={isMobile}
             buttonText="#Partiu"
           />
 
@@ -92,7 +92,7 @@ const HomePage = () => {
             title="Módulo IV - Projetando o futuro"
             text="Chegou a hora de explorar o fascinante universo do kit robótico. Seremos apresentados aos componentes que o compõem e aprenderemos a utilizá-los para criar projetos interessantes. Abordaremos a protoboard, uma placa de montagem essencial, além de explorar os LEDs, resistores e suas aplicações. Um destaque deste módulo será a criação de um sistema de alerta, em que entenderemos o esquema elétrico e aprenderemos a programá-lo. Também teremos uma atividade prática para consolidar o aprendizado e um desafio empolgante para os mais audaciosos. Prepare-se para desvendar os segredos do kit robótico e dar vida às suas ideias!"
             img={robs2}
-            left={!isMobile}
+            left={isMobile}
             buttonText="Oxe, simbora!"
           />
         </Container>
