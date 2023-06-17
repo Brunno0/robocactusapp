@@ -17,6 +17,7 @@ const Cards = ({ title, text, img, left, buttonText }) => {
       direction={{ base: 'column', sm: 'row' }}
       overflow='hidden'
       variant='outline'
+      
     >
       {left ? toLeft() : null}
       <Stack>
@@ -30,11 +31,11 @@ const Cards = ({ title, text, img, left, buttonText }) => {
 
         <CardFooter >
           {left ? (
-            <Button variant='solid' colorScheme='blue' >
+            <Button variant='solid' colorScheme='blue'ml="auto" >
               {buttonText}
             </Button>
           ) : (
-            <Button variant='solid' colorScheme='blue' ml="auto">
+            <Button variant='solid' colorScheme='blue'>
               {buttonText}
             </Button>
           )}

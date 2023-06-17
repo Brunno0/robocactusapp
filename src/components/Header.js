@@ -2,7 +2,6 @@ import {
   Box,
   Flex,
   Avatar,
-  Link,
   Button,
   Menu,
   MenuButton,
@@ -14,49 +13,58 @@ import {
   useColorMode,
   Center,
   IconButton,
+  useBreakpointValue,
   
 } from '@chakra-ui/react';
 import robocactus from '../assests/robocactus.png'
-import { AddIcon, EditIcon, ExternalLinkIcon, HamburgerIcon, MoonIcon, RepeatIcon, SunIcon } from '@chakra-ui/icons';
+import {  ChevronRightIcon, HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
 
 
-export default function Nav() {
+export default function Header() {
   const { colorMode, toggleColorMode } = useColorMode();
+  const isMobile = useBreakpointValue({ base: true, md: false });
+ 
+  const toMobile = ()=>{
+
+    return ( <Menu>
+      <MenuButton
+        as={IconButton}
+        aria-label='Options'
+        icon={<HamburgerIcon />}
+        variant='outline'
+      />
+      <MenuList>
+        
+        <MenuItem icon={<ChevronRightIcon />} >
+          Home
+        </MenuItem>
+        <MenuItem icon={<ChevronRightIcon />} >
+          Sobre
+        </MenuItem>
+        <MenuItem icon={<ChevronRightIcon />} >
+          Contato
+        </MenuItem>
+     
+      </MenuList>
+    </Menu>)
+    
+  }
+  
+  const buttons = () =>{
+    return (
+    <><Button>Home</Button>
+    <Button>Sobre</Button>
+    <Button>Contato</Button></>)
+  }
 
   return (
     <>
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <Box>
-          <Menu>
-  <MenuButton
-    as={IconButton}
-    aria-label='Options'
-    icon={<HamburgerIcon />}
-    variant='outline'
-  />
-  <MenuList>
-    
-    <MenuItem icon={<AddIcon />} command='⌘T'>
-      New Tab
-    </MenuItem>
-    <MenuItem icon={<ExternalLinkIcon />} command='⌘N'>
-      New Window
-    </MenuItem>
-    <MenuItem icon={<RepeatIcon />} command='⌘⇧N'>
-      Open Closed Tab
-    </MenuItem>
-    <MenuItem icon={<EditIcon />} command='⌘O'>
-      Open File...
-    </MenuItem>
-  </MenuList>
-</Menu>
-         
+         {isMobile?  toMobile():null}
           </Box>
-          <Button>Home</Button>
-          <Button>Sobre</Button>
-          <Button>Contato</Button>
-
+          {isMobile? null:buttons()}
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={7}>
               <Button onClick={toggleColorMode}>
