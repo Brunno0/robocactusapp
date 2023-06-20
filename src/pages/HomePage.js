@@ -3,18 +3,13 @@ import styled from 'styled-components';
 import { useBreakpointValue } from '@chakra-ui/react';
 import { Container, Box, Heading, Text } from '@chakra-ui/react';
 import Header from '../components/Header';
-import Cards from './Cards';
+import Cards from '../components/Cards';
 import { Highlight } from '@chakra-ui/react';
 import robocactus from '../assests/robocactus.png';
 import project from '../assests/project.png';
 import robs2 from '../assests/robocactus2.png';
 
-const ContainerAlign = styled.div`
-  width: 100vw;
-  padding-top: 10px;
-  align-items: center;
-  justify-content: center;
-`;
+
 
 const HomePage = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
@@ -23,16 +18,20 @@ const HomePage = () => {
     <>
       <Header />
 
-      <ContainerAlign>
-        <Container
-          gap={10}
-          maxW={isMobile ? '100%' : '70%'}
-          display="flex"
-          flexDirection="column"
-        >
-          <Box w="100%" textAlign="justify" maxW="100%" display="flex" flexDirection="column">
-            <Heading lineHeight={['tall', 'tall', 'base']}>
-              <Text fontSize={['4xl', '4xl', '5xl']}>Saudações!</Text>
+      
+      <Box
+                width="100vw"
+                paddingTop="10px"
+                display="flex"
+                flexDirection={"column"}
+                alignItems="center"
+                justifyContent="center"
+            >
+        <Container gap={10} maxW={isMobile ? '100%' : '70%'} >
+          <Box w="100%" textAlign="justify" maxW="100%">
+            <Heading lineHeight={['tall', 'tall', 'base']} 
+                      fontSize={['4xl', '4xl', '5xl']}>
+              <Text>Saudações!</Text>
               <Highlight
                 query={['robótica', 'programação', 'desenvolvimento de tecnologias']}
                 styles={{
@@ -48,14 +47,7 @@ const HomePage = () => {
               </Highlight>
             </Heading>
 
-            <Text fontSize="1xl" >
-              Utilizaremos o Arduino como ferramenta para aprender sobre esses temas. Ao longo da jornada, abordaremos os
-              princípios da robótica, programação de robôs, montagem, conexões elétricas, sensores, entre outros. O
-              objetivo é construir nosso primeiro projeto robótico juntos. O Robôcactus é um projeto criado no sertão
-              brasileiro com o propósito de levar a robótica educacional às escolas de todo o país. Ele será nosso
-              companheiro de equipe. Divirtam-se!
-            </Text>
-            <br/>
+            <br />
 
             {/* <Heading lineHeight="tall">
               <Text fontSize="3xl">Jornada:</Text>
@@ -96,7 +88,7 @@ const HomePage = () => {
             buttonText="Oxe, simbora!"
           />
         </Container>
-      </ContainerAlign>
+      </Box>
     </>
   );
 };

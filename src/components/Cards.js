@@ -12,6 +12,9 @@ const Cards = ({ title, text, img, left, buttonText }) => {
       />)
   }
 
+
+
+
   return (
     <Card
       direction={{ base: 'column', sm: 'row' }}
@@ -24,7 +27,7 @@ const Cards = ({ title, text, img, left, buttonText }) => {
         <CardBody>
           <Heading size='md'>{title}</Heading>
 
-          <Text py='2' textAlign="justify">
+          <Text py='2' textAlign="justify" >
             {text}
           </Text>
         </CardBody>
