@@ -11,10 +11,6 @@ const Cards = ({ title, text, img, left, buttonText }) => {
         background='#338a9e'
       />)
   }
-
-
-
-
   return (
     <Card
       direction={{ base: 'column', sm: 'row' }}
@@ -31,23 +27,13 @@ const Cards = ({ title, text, img, left, buttonText }) => {
             {text}
           </Text>
         </CardBody>
-
         <CardFooter >
-          {left ? (
-            <Button variant='solid' colorScheme='blue'ml="auto" >
+          <Button variant='solid' colorScheme='blue'ml="auto" >
               {buttonText}
             </Button>
-          ) : (
-            <Button variant='solid' colorScheme='blue'>
-              {buttonText}
-            </Button>
-          )}
-
-
-        </CardFooter>
+     </CardFooter>
       </Stack>
       {!left ? toLeft() : null}
     </Card>)
-
 }
 export default Cards

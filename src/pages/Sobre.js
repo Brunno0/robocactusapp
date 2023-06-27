@@ -8,6 +8,7 @@ import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react';
 import robocactusv1 from '../assests/ROBOCACTUS_V1.png';
 import robs2 from '../assests/robocactus2.png';
 import robToRight from '../assests/robo-.png';
+import Footer from '../components/Footer';
 
 
 const Sobre = () => {
@@ -18,7 +19,7 @@ const Sobre = () => {
             <Header />
 
             <Box
-                width="100vw"
+               
                 paddingTop="10px"
                 display="flex"
                 flexDirection={"column"}
@@ -27,7 +28,7 @@ const Sobre = () => {
             >
                 <Container
                     gap={10}
-                    maxW={isMobile ? '100%' : '70%'}
+                    maxW={isMobile ? '100%' : '80%'}
                     display="flex"
 
                 >
@@ -94,7 +95,7 @@ const Sobre = () => {
                                                         <Box>
                                                             <Flex mb={4} flexDirection={isMobile ? 'column' : 'row'}>
                                                                 <Box flex="0 0 30%" mr={isMobile ? 0 : 4}>
-                                                                    <Image src={robocactusv1} alt="primeira versão robôcactus" w={isMobile ? '100%' : '70%'} />
+                                                                    <Image src={robocactusv1} alt="primeira versão robôcactus" w={isMobile ? '100%' : '80%'} />
                                                                 </Box>
                                                                 <Box flex="1">
                                                                     <Box>
@@ -151,14 +152,13 @@ const Sobre = () => {
                                                                         enriquecedora.
                                                                         <Text as="span" fontWeight="bold">
                                                                             {' '}
-                                                                            Nesta versão, foram incorporados elementos de gamificação e desafios, que visam
+                                                                            Nesta versão, foram incorporados elementos visuais, diagramação, vídeos e desafios, que visam
                                                                             estimular o engajamento e a motivação dos alunos na aprendizagem de lógica de
-                                                                            programação.
+                                                                            programação e robótica.
                                                                         </Text>{' '}
-                                                                        O aplicativo agora possui um sistema de pontuação, medalhas e níveis, de forma que os
-                                                                        estudantes possam acompanhar seu progresso e se sentirem incentivados a avançar.
-                                                                        Além disso, foram adicionadas novas atividades e desafios, que abordam diferentes
-                                                                        conceitos e habilidades relacionados à programação e à robótica.
+                                                                        A apostila foi modificada a partir da experiência da sua primeira versão e está disponível no link: 
+                                                                        <Text as="span" color="blue.500">                                                                  
+                                                                            <a href='https://educapes.capes.gov.br/handle/capes/601278'> segunda versão robôcactus</a>.      </Text>
                                                                     </Text>
                                                                 </Box>
                                                             </Flex>
@@ -203,15 +203,13 @@ const Sobre = () => {
                                 </Stack>
                             </CardBody>
                             <CardFooter>
-                                <Text fontSize="sm" pt="2" textAlign="justify">
-                                    Espero que essa história possa inspirar você a explorar o mundo da robótica, programação e
-                                    desenvolvimento de tecnologias. Se tiver alguma dúvida ou quiser saber mais, não hesite em entrar em
-                                    contato. Estou aqui para ajudar!
-                                </Text>
+                                
                             </CardFooter>
                         </Card>
                     </Box>
+                    
                 </Container>
+                <Footer isMobile={isMobile}></Footer>
             </Box>
         </>
     );

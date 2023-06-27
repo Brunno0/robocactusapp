@@ -16,6 +16,7 @@ import {
 import { useNavigate } from 'react-router';
 import { goToHome } from '../routes/cordinator';
 import Header from '../components/Header'
+import Footer from '../components/Footer';
 
 const LoginPage = () => {
     const navigate = useNavigate();
@@ -54,6 +55,7 @@ const LoginPage = () => {
                     Não tem uma conta? <Text as="span" color="blue.500">cadastre-se</Text>
                 </Text>
             </Box>
+            <Footer ></Footer>
         </Container>
 
     );
