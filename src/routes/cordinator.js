@@ -17,4 +17,7 @@ export const goToContato = (navigate) =>{
 export const goToMod = (navigate,n) =>{
     navigate(`/mod/${n}`)
 }
+export const goToMod1 = (navigate) =>{
+    navigate('/modulo1')
+}
 
