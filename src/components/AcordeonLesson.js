@@ -44,9 +44,7 @@ const AcordeonLesson = ({isMobile}) => {
                 fontSize: ['md',],
                 lineHeight: ['base', 'tall', 'tall'],
             }}>
-            Robótica é uma ciência que combina mecânica, eletrônica e ciência da computação. Seus estudos permitem construir máquinas programadas para realizar tarefas, robôs. Existem vários tipos de robôs, e sua classificação e aplicação dependem de seus sensores, cadeia cinemática de movimento, autonomia, etc. Várias são as áreas nas quais o robô pode desempenhar um papel, seja na indústria, medicina, segurança, entre outras.
-
-            Para entendermos como o robô funciona, precisaremos identificar suas partes físicas e lógicas.  O hardware  (parte física) é feito de peças como Arduino, sensores, motores, fios e todos os componentes que podemos tocar, e o software (parte lógica) é um programa, um ambiente de desenvolvimento de códigos de computador (IDE) que vai controlar o hardware.
+            Texto
         </Highlight>
 
                    <FormMi/>

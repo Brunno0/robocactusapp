@@ -19,12 +19,12 @@ const YoutubeCard = ({title,subTitle,description,url}) => {
             <Text>{subTitle}</Text>
           </Box>
         </Flex>
-        <IconButton
+        {/* <IconButton
           variant='ghost'
           colorScheme='gray'
           aria-label='See menu'
           icon={<BsThreeDotsVertical />}
-        />
+        /> */}
       </Flex>
     </CardHeader>
     <CardBody>
@@ -34,7 +34,7 @@ const YoutubeCard = ({title,subTitle,description,url}) => {
     </CardBody>
     <AspectRatio vw={'50%'} ratio={1} margin={'10px'}>
         <iframe
-            title='naruto'
+            title={title}
             src={url}
             allowFullScreen
         />

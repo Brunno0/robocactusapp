@@ -76,7 +76,7 @@ const Modulo1 = () => {
                             <h2>
                                 <AccordionButton>
                                     <Box as="span" flex='1' textAlign='left'>
-                                        <Heading size='sm'> Atividade </Heading>
+                                        <Heading size='sm'> 1. Robótica </Heading>
                                     </Box>
                                     <AccordionIcon />
                                 </AccordionButton>
