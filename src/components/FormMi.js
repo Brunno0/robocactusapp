@@ -29,18 +29,13 @@ const FormMi = () => {
     <>
       <form onSubmit={sendM1}>
         <FormControl >
-
-
           <Card>
             <CardHeader>
               <Heading size='md'>Atividade M1</Heading>
             </CardHeader>
-
             <CardBody>
               <Stack divider={<StackDivider />} spacing='4'>
-
                 <Box>
-
                   <FormLabel>
                     Assista os seguintes vídeos na plataforma do YouTube para completar nosso conteúdo e responder a questão a seguir.
                   </FormLabel>
@@ -53,7 +48,6 @@ const FormMi = () => {
                         url={'https://www.youtube.com/embed/5lh3OtqkLMU'}
                       />
                     </Box>
-
                     <Box width={cardWidth}>
                       <YoutubeCard
                         title={'Inteligência artificial'}
@@ -62,12 +56,10 @@ const FormMi = () => {
                         url={'https://www.youtube.com/embed/Lhu8bdmkMCM'}
                       />
                     </Box>
-
                   </Box>
-
                   <Box width="100%" margin={'10px'}>
-
-                    <Heading size='xs' textTransform='uppercase'> 1) Escreva sobre robótica, seu significado, tipos e a importância dessa ciência para humanidade. Cite exemplos.</Heading>
+                    <Heading size='xs' textTransform='uppercase'>
+                    1) Escreva sobre robótica, seu significado, tipos e a importância dessa ciência para humanidade. Cite exemplos.</Heading>
                     <Textarea
                       name="q1"
                       id="q1"
@@ -89,13 +81,9 @@ const FormMi = () => {
                     onChange={onChangeInputs}
                     type="Textarea"
                     style={{ width: '100%' }}
-                  />
-                  <Text pt='2' fontSize='sm'>
-                    View a summary of all your clients over the last month.
-                  </Text>
-                </Box>
+                                      />
+               </Box>
                 <Box>
-
                   <Heading size='xs' textTransform='uppercase'>
                   3) Qual a diferença entre robótica, robótica industrial e educacional?
                   </Heading>
@@ -123,13 +111,10 @@ const FormMi = () => {
                 </Box>
                 <Text pt='2' fontSize='sm'>
                 Obs: A imaginação é livre, tente identificar o problema que o robô poderia resolver.
-                  </Text>
-               
+                </Text>     
               </Stack>
             </CardBody>
           </Card>
-
-
           <FormHelperText>Confira as questões e clique em enviar</FormHelperText>
           <Button variant="solid" colorScheme="blue" ml="auto" type="submit" >
             Enviar

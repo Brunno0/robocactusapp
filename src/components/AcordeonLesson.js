@@ -11,12 +11,8 @@ import {
 } from '@chakra-ui/react'
 
 import FormMi from './FormMi'
-
-
 const AcordeonLesson = ({isMobile}) => {
-    
- 
-    return (
+        return (
 <Accordion allowMultiple >
 <AccordionItem >
     <h2>
@@ -28,13 +24,13 @@ const AcordeonLesson = ({isMobile}) => {
         </AccordionButton>
     </h2>
     <AccordionPanel pb={4}>
-        <Stack direction='row'>
+        {/* <Stack direction='row'>
             <Badge>Default</Badge>
             <Badge colorScheme='green'>Success</Badge>
             <Badge colorScheme='red'>Removed</Badge>
             <Badge colorScheme='purple'>New</Badge>
-        </Stack>
-        <Highlight textAlign="justify" query={
+        </Stack> */}
+        {/* <Highlight textAlign="justify" query={
             ['ciência da computação', 'mecânica', 'eletrônica', 'cadeia cinemática', 'sensores', 'autonomia', 'indústria', 'medicina', 'segurança', 'hardware', 'software']}
             styles={{
                 px: ['1', '2', '3'],
@@ -45,19 +41,10 @@ const AcordeonLesson = ({isMobile}) => {
                 lineHeight: ['base', 'tall', 'tall'],
             }}>
             Texto
-        </Highlight>
-
-                   <FormMi/>
-
+        </Highlight> */}
+              <FormMi/>
     </AccordionPanel>
 </AccordionItem>
-
-
-
-
-
-
-
 </Accordion>
     )}
 export default AcordeonLesson
