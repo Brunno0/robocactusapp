@@ -3,18 +3,12 @@ import styled from 'styled-components';
 import { useBreakpointValue } from '@chakra-ui/react';
 import { Container, Box, Heading, Text } from '@chakra-ui/react';
 import Header from '../components/Header';
-import Cards from './Cards';
+import Cards from '../components/Cards';
 import { Highlight } from '@chakra-ui/react';
 import robocactus from '../assests/robocactus.png';
 import project from '../assests/project.png';
 import robs2 from '../assests/robocactus2.png';
-
-const ContainerAlign = styled.div`
-  width: 100vw;
-  padding-top: 10px;
-  align-items: center;
-  justify-content: center;
-`;
+import Footer from '../components/Footer';
 
 const HomePage = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
@@ -23,16 +17,20 @@ const HomePage = () => {
     <>
       <Header />
 
-      <ContainerAlign>
-        <Container
-          gap={10}
-          maxW={isMobile ? '100%' : '70%'}
-          display="flex"
-          flexDirection="column"
-        >
-          <Box w="100%" textAlign="justify" maxW="100%" display="flex" flexDirection="column">
-            <Heading lineHeight={['tall', 'tall', 'base']}>
-              <Text fontSize={['4xl', '4xl', '5xl']}>Saudações!</Text>
+      
+      <Box
+                width="100vw"
+                paddingTop="10px"
+                display="flex"
+                flexDirection={"column"}
+                alignItems="center"
+                justifyContent="center"
+            >
+        <Container gap={10} maxW={isMobile ? '100%' : '80%'} >
+          <Box w="100%" textAlign="justify" maxW="100%">
+            <Heading lineHeight={['tall', 'tall', 'base']} 
+              fontSize={['4xl', '4xl', '5xl']}>
+              <Text>Saudações!</Text>
               <Highlight
                 query={['robótica', 'programação', 'desenvolvimento de tecnologias']}
                 styles={{
@@ -47,26 +45,13 @@ const HomePage = () => {
                 Vamos iniciar nossa jornada nas áreas da robótica, programação e desenvolvimento de tecnologias.
               </Highlight>
             </Heading>
-
-            <Text fontSize="1xl" >
-              Utilizaremos o Arduino como ferramenta para aprender sobre esses temas. Ao longo da jornada, abordaremos os
-              princípios da robótica, programação de robôs, montagem, conexões elétricas, sensores, entre outros. O
-              objetivo é construir nosso primeiro projeto robótico juntos. O Robôcactus é um projeto criado no sertão
-              brasileiro com o propósito de levar a robótica educacional às escolas de todo o país. Ele será nosso
-              companheiro de equipe. Divirtam-se!
-            </Text>
-            <br/>
-
-            {/* <Heading lineHeight="tall">
-              <Text fontSize="3xl">Jornada:</Text>
-            </Heading> */}
-          </Box>
+  </Box>
         </Container>
 
-        <Container display="flex" flexDirection="column" gap={5} maxW={isMobile ? '100%' : '70%'}>
+        <Container display="flex" flexDirection="column" gap={5} maxW={isMobile ? '100%' : '80%'}>
           <Cards
             title="Módulo I - Vamos falar sobre robótica?"
-            text="Neste módulo, daremos início aos nossos estudos de robótica. Abordaremos tópicos como a robótica industrial, presente em diversos setores da indústria, impulsionando a automação de processos e aumentando a eficiência produtiva. Também exploraremos a robótica educacional, desempenhando um papel importante no ensino e no desenvolvimento de habilidades. Além disso, mergulharemos na fascinante área da inteligência artificial, possibilitando aos robôs tomar decisões e interagir de forma inteligente com o ambiente. Por fim, teremos uma atividade relacionada ao módulo. Prepare-se para expandir seu conhecimento e explorar o mundo da robótica em suas diversas vertentes."
+            text="Neste módulo, daremos início aos nossos estudos de robótica. Abordaremos tópicos como a robótica industrial, presente em diversos setores da indústria, a robótica educacional, desempenhando um papel importante no ensino e no desenvolvimento de habilidades. Além disso, mergulharemos na fascinante área da inteligência artificial, possibilitando aos robôs tomar decisões e interagir de forma inteligente com o ambiente. Por fim, teremos uma atividade relacionada ao módulo."
             img={robocactus}
             left={isMobile}
             buttonText="Simbora"
@@ -74,7 +59,7 @@ const HomePage = () => {
 
           <Cards
             title="Módulo II - E o Arduino, que tal?"
-            text="Neste módulo, daremos início aos nossos estudos sobre o Arduino, uma plataforma versátil e poderosa. Veremos o hardware Arduino Uno, que é essencial para a robótica e automação de processos. Também exploraremos o software Arduino, uma ferramenta de programação que permite criar projetos incríveis. E, para consolidar o aprendizado, teremos uma atividade prática relacionada ao módulo. Prepare-se para expandir seu conhecimento e explorar o mundo da tecnologia por meio do Arduino."
+            text="Neste módulo, daremos início aos nossos estudos sobre o Arduino, uma plataforma versátil e poderosa. Veremos o hardware e o software do Arduino UNO, uma . E, para consolidar o aprendizado, teremos uma atividade prática relacionada ao módulo. "
             img="https://upload.wikimedia.org/wikipedia/commons/7/71/Arduino-uno-perspective-transparent.png"
             left={isMobile}
             buttonText="#Partiu"
@@ -82,7 +67,7 @@ const HomePage = () => {
 
           <Cards
             title="Módulo III - A lógica das máquinas"
-            text="Para esse módulo, vamos explorar tópicos essenciais para o aprendizado do Arduino. Abordaremos a lógica de programação e a linguagem utilizada para programar essa plataforma versátil. Você terá a oportunidade de programar e testar sua própria placa Arduino, além de aprender a criar uma régua eletrônica utilizando o sensor HC-SR04. Ao longo do módulo, vamos desvendar os segredos por trás da conexão do sensor ao Arduino e codificar nosso projeto. E, é claro, não podemos esquecer da atividade prática que permitirá aplicar os conhecimentos adquiridos. Prepare-se para mergulhar na emocionante jornada da programação com Arduino."
+            text="Para esse módulo, vamos explorar tópicos essenciais para o aprendizado do Arduino. Abordaremos a lógica de programação e a linguagem utilizada para programar essa plataforma versátil. Você terá a oportunidade de programar e testar sua própria placa Arduino, além de aprender a criar uma régua eletrônica utilizando o sensor HC-SR04. Ao longo do módulo, vamos desvendar os segredos por trás da conexão do sensor ao Arduino e codificar nosso projeto. E, é claro, não podemos esquecer da atividade prática que permitirá aplicar os conhecimentos adquiridos."
             img={project}
             left={isMobile}
             buttonText="Bora"
@@ -96,7 +81,8 @@ const HomePage = () => {
             buttonText="Oxe, simbora!"
           />
         </Container>
-      </ContainerAlign>
+            <Footer isMobile={isMobile}></Footer>
+      </Box>
     </>
   );
 };

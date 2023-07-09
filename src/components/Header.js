@@ -18,6 +18,8 @@ import {
 } from '@chakra-ui/react';
 import robocactus from '../assests/robocactus.png'
 import {  ChevronRightIcon, HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
+import { useNavigate } from 'react-router-dom';
+import { goToContato, goToHome, goToLogin, goToSobre } from '../routes/cordinator';
 
 
 export default function Header() {
@@ -35,10 +37,10 @@ export default function Header() {
       />
       <MenuList>
         
-        <MenuItem icon={<ChevronRightIcon />} >
+        <MenuItem icon={<ChevronRightIcon />} onClick={()=>goToHome(navigate)}>
           Home
         </MenuItem>
-        <MenuItem icon={<ChevronRightIcon />} >
+        <MenuItem icon={<ChevronRightIcon /> } onClick={()=>goToSobre(navigate)}>
           Sobre
         </MenuItem>
         <MenuItem icon={<ChevronRightIcon />} >
@@ -50,11 +52,15 @@ export default function Header() {
     
   }
   
+  const navigate = useNavigate()
+
+
+
   const buttons = () =>{
     return (
-    <><Button>Home</Button>
-    <Button>Sobre</Button>
-    <Button>Contato</Button></>)
+    <><Button onClick={()=>goToHome(navigate)}>Home</Button>
+    <Button onClick={()=>goToSobre(navigate)}>Sobre</Button>
+    <Button onClick={()=>goToContato(navigate)}>Contato</Button></>)
   }
 
   return (
@@ -100,7 +106,7 @@ export default function Header() {
                   <MenuDivider />
                   <MenuItem>Seus pontos</MenuItem>
                   <MenuItem>Configurações</MenuItem>
-                  <MenuItem>Logout</MenuItem>
+                  <MenuItem onClick={()=>goToLogin(navigate)}>Logout</MenuItem>
                 </MenuList>
               </Menu>
             </Stack>

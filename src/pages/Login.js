@@ -16,6 +16,7 @@ import {
 import { useNavigate } from 'react-router';
 import { goToHome } from '../routes/cordinator';
 import Header from '../components/Header'
+import Footer from '../components/Footer';
 
 const LoginPage = () => {
     const navigate = useNavigate();
@@ -24,13 +25,13 @@ const LoginPage = () => {
 
         <Container maxW="md" mt={8} justifyContent="center" alignItems="center"
         >
-            <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+            <Box px={4}>
                 <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
                     ROBOCACTUS APP
                 </Flex>
             </Box>
 
-            <Box bg="white" p={8} borderRadius="md" boxShadow="md" >
+            <Box  p={8} borderRadius="md" boxShadow="md" >
                 <Heading mb={4}>Login</Heading>
                 <form>
                     <Stack spacing={3}>
@@ -54,6 +55,7 @@ const LoginPage = () => {
                     Não tem uma conta? <Text as="span" color="blue.500">cadastre-se</Text>
                 </Text>
             </Box>
+            <Footer ></Footer>
         </Container>
 
     );
