@@ -11,13 +11,32 @@ Primeira versão do app:
 [robocactusapp.surge.sh](https://robocactusapp.surge.sh)
 
 
-## Sobre o Projeto
+# Projeto Robôcactus
 
-O Robôcactus é um projeto criado no sertão brasileiro com o intuito de aproximar a robótica educacional às escolas de todo o país. Acreditamos que a robótica é uma ferramenta poderosa para estimular o aprendizado e desenvolver habilidades essenciais, como pensamento lógico, resolução de problemas e trabalho em equipe.
+O Robôcactus é um projeto criado no sertão brasileiro com o intuito de aproximar a robótica educacional das escolas de todo o país. Acreditamos que a robótica é uma ferramenta poderosa para estimular o aprendizado e desenvolver habilidades essenciais, como pensamento lógico, resolução de problemas e trabalho em equipe.
 
-## Como Participar
+## Versões do Projeto
 
-Para fazer parte dessa jornada, basta acompanhar nosso conteúdo e praticar os exercícios propostos. Esteja preparado para explorar conceitos de robótica, programação e tecnologia de forma divertida e desafiadora. O Robôcactus será seu companheiro de equipe nessa aventura!
+- **Versão 1:** A primeira versão foi resultado de uma dissertação de mestrado e foi aplicada como produto educacional em sala de aula. Um artigo sobre a prática da versão 1 foi publicado e pode ser acessado [aqui](https://www.researchgate.net/figure/Figura-1-Versao-Robocactus-10_fig1_347736400).
+
+- **Versão 2:** Na segunda versão, implementamos melhorias significativas no projeto. A apostila da versão 2 está disponível para acesso [aqui](https://educapes.capes.gov.br/bitstream/capes/601278/5/Apostila%20Rob%C3%B4cactus%202.0%20%281%29.pdf).
+
+- **Versão 3:** Atualmente, estamos focados em novos avanços e na diagramação da apostila para a terceira versão do projeto. Utilizamos as seguintes tecnologias:
+
+    - Frontend:
+        - React
+        - JavaScript (JS)
+        - Chakra UI
+
+    - Backend:
+        - Node.js
+        - TypeScript (TS)
+
+    Além disso, o projeto conta com a integração da inteligência generativa ChatGPT para interagir e corrigir questões dos formulários de evolução e atividades do curso.
+
+## Objetivo
+
+Nosso objetivo é desenvolver uma aplicação que possa auxiliar o ensino de robótica para iniciantes, proporcionando espaço para a autonomia do estudante, ao mesmo tempo em que auxilia os professores com correções e conteúdos relacionados a essa prática.
 
 ## Contribuição
 
