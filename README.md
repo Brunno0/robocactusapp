@@ -21,7 +21,7 @@ O Robôcactus é um projeto criado no sertão brasileiro com o intuito de aproxi
 
 - **Versão 2:** Na segunda versão, implementamos melhorias significativas no projeto. A apostila da versão 2 está disponível para acesso [aqui](https://educapes.capes.gov.br/bitstream/capes/601278/5/Apostila%20Rob%C3%B4cactus%202.0%20%281%29.pdf).
 
-- **Versão 3:** Atualmente, estamos focados em novos avanços e na diagramação da apostila para a terceira versão do projeto. Utilizamos as seguintes tecnologias:
+- **Versão 3:** Atualmente, estamos focados em transformar a terceira versão do projeto em uma aplicação web gamificada. Pra isso, estamos utilizando as seguintes tecnologias:
 
     - Frontend:
         - React
