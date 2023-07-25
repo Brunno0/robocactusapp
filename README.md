@@ -7,9 +7,6 @@
 
 Começaremos nossa jornada nas áreas de robótica, programação e desenvolvimento de tecnologias. Utilizaremos a plataforma Arduino como ferramenta para introduzir os conhecimentos necessários ao seu desenvolvimento. Também aprenderemos os princípios da robótica, programação de robôs, montagem, conexões elétricas, sensores, etc. Ao final dessa jornada, estaremos prontos para construir nosso primeiro projeto robótico juntos.
 
-Primeira versão do app:
-[robocactusapp.surge.sh](https://robocactusapp.surge.sh)
-
 
 # Projeto Robôcactus
 
@@ -33,6 +30,10 @@ O Robôcactus é um projeto criado no sertão brasileiro com o intuito de aproxi
         - TypeScript (TS)
 
     Além disso, o projeto conta com a integração da inteligência generativa ChatGPT para interagir e corrigir questões dos formulários de evolução e atividades do curso.
+
+
+**Robocactus app (em construção_**:
+[robocactusapp.surge.sh](https://robocactusapp.surge.sh)
 
 ## Objetivo
 
