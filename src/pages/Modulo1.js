@@ -28,7 +28,8 @@ import {
 import { AddIcon, MinusIcon } from '@chakra-ui/icons';
 import { Card, CardHeader, CardBody } from '@chakra-ui/react';
 import YoutubeCard from '../components/YoutubeCard';
-
+import TableComponents from '../components/TableComponets';
+import ABB from '../assests/ABB_IRB_6700_0002.png'
 const Modulo1 = () => {
   const { isOpen, onToggle } = useDisclosure();
   const isMobile = useBreakpointValue({ base: true, md: false });
@@ -230,7 +231,72 @@ const Modulo1 = () => {
                         industrial e garante eficiência, segurança e agilidade nos
                         processos de produção.
                       </Text>
-                    </Text>
+                      </Text>
+        
+        <Text Text fontSize="lg" textAlign="justify"><br/>
+            <Text><strong>Alguns tipos de robôs industriais</strong></Text>
+            <br/>
+            
+
+      <Text>
+        <strong>Robôs Manipuladores:</strong> São robôs com braços articulados compostos por várias juntas (geralmente seis) que lhes permitem movimentar-se em diferentes direções. Eles são amplamente utilizados em tarefas como soldagem, pintura, montagem e manipulação de materiais.
+        
+        <TableComponents 
+        titleOne={"ABB IRB 6700"}
+        titleTwo={"ABB IRB 670022"}
+        img={ABB}
+
+        txt1={
+        
+        <Text fontSize="lg" textAlign="justify">
+        <br/> Um exemplo de modelo de robô manipulador é o "<em>ABB IRB 6700</em>".<br/>
+          <Text><strong>ABB</strong> é uma das principais empresas fabricantes de robôs industriais e o modelo <em>IRB 6700</em> faz parte da série <em>IRB 6700</em>, que é projetada para aplicações de alta performance e capacidade de carga.</Text>
+          <br />
+          <Text>
+            <strong>Características do ABB IRB 6700:</strong>
+          </Text>
+          <Text>
+            - Possui vários modelos com capacidades de carga útil que variam de 150 kg a 300 kg.
+          </Text>
+          <Text>
+            - Pode ter até seis eixos articulados para movimentos precisos e flexíveis.
+          </Text>
+          <Text>
+            - É adequado para tarefas como soldagem, manuseio de materiais pesados, montagem, entre outras aplicações industriais.
+          </Text>
+          <Text>
+            - Tem alta velocidade e precisão, o que o torna adequado para linhas de produção com alto rendimento.
+          </Text>
+          <Text>
+            - É equipado com controladores avançados e recursos de segurança para garantir operações eficientes e seguras na indústria.
+          </Text>
+          <Text>
+            É importante observar que o modelo <em>IRB 6700</em> é apenas um exemplo de robô manipulador, e existem muitos outros modelos e fabricantes de robôs industriais disponíveis no mercado, cada um com características e capacidades específicas para atender a diversas necessidades de automação industrial.
+          </Text>
+        </Text>}/>
+        
+<br/>
+      </Text>
+      <Text>
+        <strong>Robôs SCARA (Selective Compliance Assembly Robot Arm):</strong> Estes robôs têm três ou quatro eixos e são projetados para movimentar-se no plano horizontal, com capacidade de alcance vertical limitado. Eles são ideais para aplicações de montagem e manipulação de peças em linhas de produção.
+      </Text>
+      <Text>
+        <strong>Robôs Cartesianos:</strong> Também conhecidos como robôs de movimento linear, esses robôs se movem ao longo de eixos cartesianos (X, Y, Z) e são frequentemente usados em operações de pick-and-place e na fabricação de componentes eletrônicos.
+      </Text>
+      <Text>
+        <strong>Robôs Delta:</strong> Possuem uma estrutura paralela que se assemelha a um tripé ou uma torre, com eixos conectados a juntas esféricas. Esses robôs são conhecidos por sua alta velocidade e são comumente utilizados em tarefas de picking, embalagem e montagem rápida.
+      </Text>
+      <Text>
+        <strong>Robôs Colaborativos (Cobots):</strong> Diferente de outros robôs industriais, os cobots são projetados para interagir e trabalhar em colaboração com seres humanos, geralmente sem a necessidade de proteções físicas. Eles são usados em várias aplicações, como montagem, manuseio de materiais e tarefas de precisão, onde a colaboração humana é benéfica.
+      </Text>
+      <Text>
+        <strong>Robôs Autônomos:</strong> Esses robôs podem operar de forma independente sem controle humano direto e podem ser usados em tarefas como transporte de materiais, inspeções autônomas e navegação em espaços complexos.
+      </Text>
+      <Text>
+        <strong>Robôs Exoesqueletos:</strong> Embora não sejam utilizados em todas as indústrias, esses robôs podem ser usados em aplicações industriais para auxiliar os trabalhadores com tarefas que requerem força extra ou suporte ergonômico.
+      </Text>
+    </Text>
+                  
                   </AccordionPanel>
                 </>
               )}

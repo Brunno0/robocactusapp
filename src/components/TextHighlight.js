@@ -36,10 +36,6 @@ const HighlightedText = () => {
 
     Para entendermos como o robô funciona, precisaremos identificar suas partes físicas e lógicas. O hardware (parte física) é feito de peças como Arduino, sensores, motores, fios e todos os componentes que podemos tocar, e o software (parte lógica) é um programa, um ambiente de desenvolvimento de códigos de computador (IDE) que vai controlar o hardware.
 
-    A Robótica: Unindo a Mecânica, Eletrônica e a Ciência da Computação para Transformar o Futuro
-
-    Em um mundo tecnológico movido pela inovação, a Robótica surge como uma ciência revolucionária, combinando habilidades da mecânica, eletrônica e ciência da computação. Por meio de seus estudos, a Robótica nos possibilita criar máquinas inteligentes, os robôs, programados para desempenhar tarefas de forma autônoma e surpreendente.
-
     Imagine explorar um vasto universo de possibilidades! A Robótica oferece diversos tipos de robôs, cada um com sua classificação e aplicação específicas. Suas características, como sensores avançados, a cadeia cinemática de movimento e a autonomia, definem sua atuação em áreas tão diversas quanto indústria, medicina, segurança, e muito mais.
 
     Na indústria, os robôs assumem o protagonismo na automação industrial.
