@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import { useBreakpointValue } from '@chakra-ui/react';
 import { Container, Box, Heading, Text } from '@chakra-ui/react';
 import Header from '../components/Header';
@@ -9,6 +8,7 @@ import robocactus from '../assests/robocactus.png';
 import project from '../assests/project.png';
 import robs2 from '../assests/robocactus2.png';
 import Footer from '../components/Footer';
+import { goToMod1 } from '../routes/cordinator';
 
 const HomePage = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
@@ -17,7 +17,6 @@ const HomePage = () => {
     <>
       <Header />
 
-      
       <Box
                 width="100vw"
                 paddingTop="10px"
@@ -55,6 +54,8 @@ const HomePage = () => {
             img={robocactus}
             left={isMobile}
             buttonText="Simbora"
+            buttonCordinator ={goToMod1}
+
           />
 
           <Cards

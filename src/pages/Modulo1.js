@@ -1,12 +1,9 @@
 import React from 'react';
 import {
-  Button,
-  Collapse,
-  SimpleGrid,
+   SimpleGrid,
   Stack,
   StackDivider,
   useBreakpointValue,
-  useDisclosure,
 } from '@chakra-ui/react';
 import {
   Container,
@@ -30,8 +27,8 @@ import { Card, CardHeader, CardBody } from '@chakra-ui/react';
 import YoutubeCard from '../components/YoutubeCard';
 import TableComponents from '../components/TableComponets';
 import ABB from '../assests/ABB_IRB_6700_0002.png'
+import KUKA from '../assests/KR 6 R900.png'
 const Modulo1 = () => {
-  const { isOpen, onToggle } = useDisclosure();
   const isMobile = useBreakpointValue({ base: true, md: false });
 
   return (
@@ -238,42 +235,57 @@ const Modulo1 = () => {
             <br/>
             
 
-      <Text>
-        <strong>Robôs Manipuladores:</strong> São robôs com braços articulados compostos por várias juntas (geralmente seis) que lhes permitem movimentar-se em diferentes direções. Eles são amplamente utilizados em tarefas como soldagem, pintura, montagem e manipulação de materiais.
-        
-        <TableComponents 
-        titleOne={"ABB IRB 6700"}
-        titleTwo={"ABB IRB 670022"}
-        img={ABB}
+                      <Text>
+                        <strong>Robôs Manipuladores:</strong> São robôs com braços articulados compostos por várias juntas (geralmente seis) que lhes permitem movimentar-se em diferentes direções. Eles são amplamente utilizados em tarefas como soldagem, pintura, montagem e manipulação de materiais.
 
-        txt1={
-        
-        <Text fontSize="lg" textAlign="justify">
-        <br/> Um exemplo de modelo de robô manipulador é o "<em>ABB IRB 6700</em>".<br/>
-          <Text><strong>ABB</strong> é uma das principais empresas fabricantes de robôs industriais e o modelo <em>IRB 6700</em> faz parte da série <em>IRB 6700</em>, que é projetada para aplicações de alta performance e capacidade de carga.</Text>
-          <br />
-          <Text>
-            <strong>Características do ABB IRB 6700:</strong>
-          </Text>
-          <Text>
-            - Possui vários modelos com capacidades de carga útil que variam de 150 kg a 300 kg.
-          </Text>
-          <Text>
-            - Pode ter até seis eixos articulados para movimentos precisos e flexíveis.
-          </Text>
-          <Text>
-            - É adequado para tarefas como soldagem, manuseio de materiais pesados, montagem, entre outras aplicações industriais.
-          </Text>
-          <Text>
-            - Tem alta velocidade e precisão, o que o torna adequado para linhas de produção com alto rendimento.
-          </Text>
-          <Text>
-            - É equipado com controladores avançados e recursos de segurança para garantir operações eficientes e seguras na indústria.
-          </Text>
-          <Text>
-            É importante observar que o modelo <em>IRB 6700</em> é apenas um exemplo de robô manipulador, e existem muitos outros modelos e fabricantes de robôs industriais disponíveis no mercado, cada um com características e capacidades específicas para atender a diversas necessidades de automação industrial.
-          </Text>
-        </Text>}/>
+                        <TableComponents
+                          titleOne={"ABB IRB 6700"}
+                          img={ABB}
+
+                          txt1={<Text fontSize="lg" textAlign="justify">
+                            <br /> Um exemplo de modelo de robô manipulador é o "<em>ABB IRB 6700</em>".<br />
+                            <Text><strong>ABB</strong> é uma das principais empresas fabricantes de robôs industriais e o modelo <em>IRB 6700</em> faz parte da série <em>IRB 6700</em>, que é projetada para aplicações de alta performance e capacidade de carga.</Text>
+                            <br />
+                            <Text>
+                              <strong>Características do ABB IRB 6700:</strong>
+                            </Text>
+                            <Text>
+                              - Possui vários modelos com capacidades de carga útil que variam de 150 kg a 300 kg.
+                            </Text>
+                            <Text>
+                              - Pode ter até seis eixos articulados para movimentos precisos e flexíveis.
+                            </Text>
+                            <Text>
+                              - É adequado para tarefas como soldagem, manuseio de materiais pesados, montagem, entre outras aplicações industriais.
+                            </Text>
+                            <Text>
+                              - Tem alta velocidade e precisão, o que o torna adequado para linhas de produção com alto rendimento.
+                            </Text>
+                            <Text>
+                              - É equipado com controladores avançados e recursos de segurança para garantir operações eficientes e seguras na indústria.
+                            </Text>
+                            <Text>
+                              É importante observar que o modelo <em>IRB 6700</em> é apenas um exemplo de robô manipulador, e existem muitos outros modelos e fabricantes de robôs industriais disponíveis no mercado, cada um com características e capacidades específicas para atender a diversas necessidades de automação industrial.
+                            </Text>
+                          </Text>}
+
+
+                          titleTwo={"KR 6 R900"}
+                          img2={KUKA}
+                          txt2={
+                            <Text fontSize="lg" textAlign="justify">
+                              <br />
+                              <Text>Outro modelo de robô bastante usado na indústria de robótica é o "<em>KUKA KR 6 R900</em>".
+                              Essa série de robôs da KUKA é conhecida pela sua <strong>alta precisão, velocidade e versatilidade</strong>, sendo amplamente utilizada em várias aplicações industriais, incluindo montagem, soldagem, manuseio de materiais, entre outras.</Text>
+                              <br />
+                              <Text>
+                                O <em>KUKA KR 6 R900</em> é um robô de <strong>seis eixos</strong> que pode ser montado no chão ou suspenso em uma estrutura. Ele é projetado para trabalhar em espaços confinados, tornando-o adequado para <strong>linhas de produção com espaço limitado</strong>. Além disso, possui uma <strong>carga útil de até 6 kg</strong>, permitindo que manipule peças com diferentes pesos.
+                              </Text>
+                              <Text>
+                                Assim como o <em>ABB IRB 6700</em>, o <em>KUKA KR 6 R900</em> também é conhecido por sua <strong>confiabilidade e facilidade de programação</strong>, o que o torna uma escolha popular na indústria de robótica para melhorar a eficiência e a automação dos processos de fabricação.
+                              </Text>
+                            </Text>}
+        />
         
 <br/>
       </Text>
@@ -318,10 +330,39 @@ const Modulo1 = () => {
                     </AccordionButton>
                   </h2>
                   <AccordionPanel pb={4}>
-                    A associação da robótica com a educação deu origem a robótica
-                    educacional, ou ainda, robótica pedagógica; um ambiente
-                    dinâmico que utiliza a robótica para o estudo de diversas
-                    disciplinas, desenvolvimento de habilidades e tecnologias.
+                    <Text fontSize="lg" textAlign="justify">
+                      <Text>A Robótica Educacional é uma área interdisciplinar que combina diversos campos do conhecimento, como lógica matemática, mecânica, eletrônica, programação e inteligência artificial.</Text>
+                      <Text>Ela consiste em utilizar a robótica como uma ferramenta pedagógica para integrar os processos de aprendizagem com a prática da construção e programação de robôs. Essa abordagem estimula o pensamento computacional e promove a aprendizagem de forma lúdica e divertida.</Text>
+                      <br />
+                      <Text>
+                        <strong>As vantagens de estudar Robótica Educacional são diversas:</strong>
+                        <br />
+                        <br />
+                        <strong>Aprendizagem Interdisciplinar:</strong> A Robótica Educacional abrange diferentes áreas do conhecimento, permitindo que os alunos explorem conceitos de matemática, física, eletrônica, informática e outras disciplinas de forma integrada.
+                        <br />
+                        <strong>Estímulo à Criatividade:</strong> Ao projetar e construir robôs, os estudantes são incentivados a exercitar sua criatividade, buscando soluções inovadoras para os desafios propostos.
+                        <br />
+                        <strong>Desenvolvimento do Pensamento Computacional:</strong> A programação dos robôs exige a criação de algoritmos e sequências lógicas, o que favorece o desenvolvimento do pensamento computacional e do raciocínio lógico.
+                        <br />
+                        <strong>Aprendizado Significativo:</strong> A experiência prática de construir e programar robôs torna o aprendizado mais significativo, pois os alunos podem ver diretamente os resultados de suas ações e entender como os conceitos teóricos se aplicam na prática.
+                        <br />
+                        <strong>Autonomia e Protagonismo:</strong> Na Robótica Educacional, os alunos se tornam protagonistas do próprio aprendizado, pois são responsáveis por tomar decisões, resolver problemas e alcançar os objetivos propostos nos projetos.
+                        <br />
+                        <strong>Trabalho em Equipe:</strong> A construção e programação de robôs frequentemente envolvem trabalho em equipe, o que estimula a colaboração e a comunicação entre os alunos.
+                        <br />
+                        <strong>Preparação para o Futuro:</strong> Com a crescente importância da tecnologia no mundo moderno, a Robótica Educacional prepara os estudantes para lidar com desafios tecnológicos e se tornarem profissionais mais capacitados e adaptáveis às demandas do mercado de trabalho.
+                        <br />
+                        <strong>Estímulo à Persistência:</strong> O processo de construir e programar robôs pode ser desafiador, mas ao enfrentarem esses desafios, os alunos desenvolvem a persistência e a capacidade de superar obstáculos.
+                        <br />
+                        <strong>Engajamento e Motivação:</strong> O aspecto lúdico e desafiador da Robótica Educacional motiva os alunos a se envolverem ativamente nas atividades, tornando o aprendizado mais atrativo e estimulante.
+                        <br />
+                        <strong>Fomento à Inovação:</strong> Ao explorar novas ideias e tecnologias, a Robótica Educacional incentiva a cultura da inovação e o pensamento fora da caixa.
+                      </Text>
+                      <br />
+                      <Text>
+                        Portanto, a Robótica Educacional é uma poderosa aliada da educação, proporcionando um ambiente de aprendizagem estimulante, interdisciplinar e criativo. Ao trabalhar com robôs de forma divertida e desafiadora, os alunos desenvolvem habilidades tecnológicas e cognitivas essenciais para o século XXI, preparando-se para enfrentar os desafios futuros de forma mais capacitada e confiante.
+                      </Text>
+                    </Text>
                   </AccordionPanel>
                 </>
               )}

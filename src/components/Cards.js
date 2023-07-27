@@ -1,7 +1,11 @@
 import { Card, CardBody, CardFooter, Image, Stack, Heading, Text, Button } from '@chakra-ui/react'
+import { useNavigate } from 'react-router-dom'
 
-const Cards = ({ title, text, img, left, buttonText }) => {
-   const toLeft = () => {
+const Cards = ({ title, text, img, left, buttonText, buttonCordinator}) => {
+   
+  const navigate = useNavigate();
+  
+  const toLeft = () => {
     return (
       <Image
         objectFit='cover'
@@ -28,7 +32,7 @@ const Cards = ({ title, text, img, left, buttonText }) => {
           </Text>
         </CardBody>
         <CardFooter >
-          <Button variant='solid' colorScheme='blue'ml="auto" >
+          <Button onClick={()=> buttonCordinator(navigate)} variant='solid' colorScheme='blue'ml="auto" >
               {buttonText}
             </Button>
      </CardFooter>

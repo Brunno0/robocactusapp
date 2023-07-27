@@ -1,6 +1,12 @@
 import { Tabs, TabList, TabPanels, Tab, TabPanel, Image, Text } from '@chakra-ui/react'
 
-const TableComponents = ({ titleOne, titleTwo, img, txt1,txt2, img2 }) => { 
+const TableComponents = ({ 
+  titleOne, 
+  titleTwo, 
+  txt1, 
+  txt2, 
+  img, 
+  img2 }) => { 
 
 return <>
 <Tabs isLazy>
@@ -12,10 +18,12 @@ return <>
     {/* initially mounted */}
     <TabPanel>
     <Image
-        boxSize='50%'
-        fit='cover'
-        src={img} 
-      />
+      boxSize="50%"
+      fit="cover"
+      src={img}
+      mx="auto"
+      my="auto"
+    />
 
     <Text fontSize="lg" textAlign="justify">
         {txt1} </Text>
@@ -23,13 +31,15 @@ return <>
     {/* initially not mounted */}
     <TabPanel>
     <Image
-        boxSize='100%'
-        fit='cover'
-        src={img2} 
-      />
+      boxSize="100%"
+      fit="cover"
+      src={img2}
+      mx="auto"
+      my="auto"
+    />
 
     <Text fontSize="lg" textAlign="justify">
-        {txt1} </Text>
+        {txt2} </Text>
     </TabPanel>
   </TabPanels>
 </Tabs></>
