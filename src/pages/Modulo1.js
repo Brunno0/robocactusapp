@@ -372,7 +372,7 @@ const Modulo1 = () => {
               {({ isExpanded }) => (
                 <>
                   <AccordionButton>
-                    <Box as="span" flex="1" textAlign="left">
+                    <Box as="span" flex="1" textAlign="left" size="md">
                       1.3 Introdução à inteligência artificial
                     </Box>
                     {isExpanded ? (
@@ -383,30 +383,46 @@ const Modulo1 = () => {
                   </AccordionButton>
 
                   <AccordionPanel pb={4}>
-                    São muitos os conhecimentos que participam do conceito de
+                   <Text align={'justify'}> São muitos os conhecimentos que participam do conceito de
                     Inteligência Artificial (IA), não iremos aqui definir exatamente
-                    o que é, mas conhecer e refletir a partir das seguintes
-                    definições:
+                    o que é, mas conhecer e refletir sobre seus conceitos e tipos. Criar máquinas que possam agir, pensar e aprender como os seres humanos é um desejo antigo, quantos filmes, seriados e histórias você conhece com essa temática? Muitos, não!?
+                    </Text>
+
+         
+                  <Heading  marginTop={"10px"} size="md">Breve histórico da inteligencia artificial</Heading>
+                   <Text align={'justify'} marginTop={"10px"}> 
+                    A concepção de construir uma máquina capaz de executar tarefas em benefício do ser humano é algo que vem sendo imaginado há muito tempo. Um marco significativo no desenvolvimento da IA ocorreu quando Warren McCulloch e Walter Pitts publicaram um artigo intitulado "A logical calculus of the ideas immanent in nervous activity" em 1943. Nesse artigo, eles apresentaram a primeira noção de neurônio artificial, um modelo computacional que fundamentava redes neurais usando matemática e algoritmos, especificamente a lógica de limiar (threshold logic). Esse modelo estabeleceu as bases para a investigação das redes neurais, que se desdobrou em duas abordagens: uma centrada nos processos biológicos do cérebro e outra voltada para a aplicação de redes neurais na inteligência artificial. Saiba mais: [artigo:<a href='https://medium.com/@augusto_Pinheiro/redes-neurais-artificiais-133de77c7240'> REDES NEURAIS ARTIFICIAIS]</a>
+                    </Text>
+
+              
+                  <Text align={'justify'} marginTop={"10px"}>A inteligência artificial trata-se da capacidade dos computadores de simular e executar tarefas que normalmente exigem inteligência humana como aprendizado, resolução de problemas, tomada de decisões, reconhecimento de padrões, entre outros.
+                  <br/> Entre as classificações da IA podemos citar as 
+                 <strong> IAs Discriminativas: </strong> São algoritmos de IA que se concentram em classificar ou tomar decisões com base em dados existentes. Eles identificam padrões e relacionam dados de entrada a categorias ou respostas pré-definidas.
+                 <strong> IAs Generativas:</strong> São algoritmos de IA que têm a capacidade de criar novos dados, semelhantes aos dados de treinamento, gerando novas amostras com base nas distribuições de probabilidade dos dados originais. </Text>
+
+                <Text marginTop={"10px"}>Tipos de inteligência artificial: </Text>
+             
+
 
                     <SimpleGrid
+                     marginTop={"10px"}
                       spacing={4}
                       maxW={isMobile ? '100%' : '80%'}
                       templateColumns={isMobile ? 'none' : 'repeat(auto-fill, minmax(100%, 1fr))'}
                     >
                       <Card>
                         <CardHeader>
-                          <Heading size="md">Rich, 1994</Heading>
+                          <Heading size="md">Inteligência Artificial Limita (ANI)</Heading>
                         </CardHeader>
                         <CardBody>
-                          <Text>
-                            “IA é o estudo de como fazer os computadores realizarem tarefas
-                            as quais, até o momento, os homens fazem melhor”.
+                          <Text align={"justify"}>
+                          A Inteligência Artificial Limitada, também chamada de "IA fraca", tem como principal foco o armazenamento de grande quantidade de dados para a execução de tarefas complexas, mas sempre direcionadas ao objetivo para o qual foram programadas. Além disso, elas podem realizar cálculos complicados de maneira rápida, porém não vão além desse escopo. Dentro dessa categoria, destacam-se dois tipos: as máquinas reativas, com recursos mais limitados que reagem a estímulos configurados; e as com memória limitada, um avanço em relação às reativas, que armazenam informações para tomar decisões, como as recomendações em serviços de streaming. Por exemplo, a personalização dos conteúdos oferecidos na Netflix baseados nas escolhas anteriores do usuário é possível graças a esse tipo de IA.
                           </Text>
                         </CardBody>
                       </Card>
                       <Card>
                         <CardHeader>
-                          <Heading size="md">Pereira, 1988</Heading>
+                          <Heading size="md">Inteligência artificial geral (AGI)</Heading>
                         </CardHeader>
                         <CardBody>
                           <Text>
@@ -419,7 +435,7 @@ const Modulo1 = () => {
                       </Card>
                       <Card>
                         <CardHeader>
-                          <Heading size="md">Russel, 2004</Heading>
+                          <Heading size="md">Superinteligência (ASI)</Heading>
                         </CardHeader>
                         <CardBody>
                           <Text>
