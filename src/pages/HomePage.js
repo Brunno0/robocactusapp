@@ -54,7 +54,7 @@ const HomePage = () => {
             img={robocactus}
             left={isMobile}
             buttonText="Simbora"
-            buttonCordinator ={goToMod1}
+            buttonCordinator={goToMod1}
 
           />
 
