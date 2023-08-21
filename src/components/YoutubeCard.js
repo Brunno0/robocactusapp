@@ -1,8 +1,7 @@
 import React from "react"
 import { Card, CardHeader, CardBody, CardFooter } from '@chakra-ui/react'
 
-import { Flex, Box, Heading, Text, IconButton, AspectRatio } from '@chakra-ui/react';
-import { BsThreeDotsVertical } from 'react-icons/bs';
+import { Flex, Box, Heading, Text, AspectRatio } from '@chakra-ui/react';
 
 const YoutubeCard = ({title,subTitle,description,url}) => {
 
@@ -16,15 +15,11 @@ const YoutubeCard = ({title,subTitle,description,url}) => {
           
           <Box>
             <Heading size='sm'>{title}</Heading>
+           <br/>
             <Text>{subTitle}</Text>
           </Box>
         </Flex>
-        {/* <IconButton
-          variant='ghost'
-          colorScheme='gray'
-          aria-label='See menu'
-          icon={<BsThreeDotsVertical />}
-        /> */}
+       
       </Flex>
     </CardHeader>
     <CardBody>
