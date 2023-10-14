@@ -11,6 +11,7 @@ import Footer from '../components/Footer';
 import { goToMod1 } from '../routes/cordinator';
 
 const HomePage = () => {
+  
   const isMobile = useBreakpointValue({ base: true, md: false });
 
   return (

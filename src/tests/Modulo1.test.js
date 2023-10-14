@@ -38,17 +38,19 @@ global.matchMedia = global.matchMedia || function () {
 
 describe("Testes da HomePage", () => {
   
-test("Deve renderizar Modulo1.js", () => {
-  const user = userEvent.setup()
+  test("Deve renderizar Modulo1.js", async () => {
+    const user = userEvent.setup()
     renderWithChakra(<HomePage />);
-    
+  
     // Encontra o botão e clica nele
     const oxeSimboraButton = screen.getByRole('button', { name: /oxe, simbora!/i });
-    user.click(oxeSimboraButton);
-    
+    user.click(oxeSimboraButton); 
+    // Aguarda até que a página Modulo1 seja renderizada
+    await screen.findByText("Módulo I - Vamos falar sobre robótica?");
+  
     // Verifica se a página Modulo1 foi renderizada
-    const modulo1Title = screen.getByText("Módulo I - Vamos falar sobre robótica?")
-    
+    const modulo1Title = screen.getByText("Módulo I - Vamos falar sobre robótica?");
     expect(modulo1Title).toBeInTheDocument();
   });
+  
 });

@@ -1,7 +1,7 @@
 import { useForm } from '../hooks/useForm';
 //import { useNavigate } from 'react-router-dom';
-import { Box, Heading, Stack, StackDivider, Text, useBreakpointValue } from '@chakra-ui/react';
-import { Card, CardHeader, CardBody, CardFooter } from '@chakra-ui/react'
+import { Box, Heading, Stack, StackDivider,  useBreakpointValue } from '@chakra-ui/react';
+import { Card, CardHeader, CardBody} from '@chakra-ui/react'
 
 import {
   FormControl,
@@ -109,9 +109,7 @@ const FormMi = () => {
                     style={{ width: '100%' }}
                   />
                 </Box>
-                <Text pt='2' fontSize='sm'>
-                Obs: A imaginação é livre, tente identificar o problema que o robô poderia resolver.
-                </Text>     
+                     
               </Stack>
             </CardBody>
           </Card>
