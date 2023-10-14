@@ -1,7 +1,6 @@
 import React from 'react';
-import {  Badge, Stack } from '@chakra-ui/react';
 import { Box, Heading } from '@chakra-ui/react';
-import { Highlight } from '@chakra-ui/react';
+import FormMi from './FormMi'
 import {
     Accordion,
     AccordionItem,
@@ -10,7 +9,7 @@ import {
     AccordionIcon,
 } from '@chakra-ui/react'
 
-import FormMi from './FormMi'
+
 const AcordeonLesson = ({isMobile}) => {
         return (
 <Accordion allowMultiple >

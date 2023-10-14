@@ -2,12 +2,11 @@ import React from 'react';
 import { Flex, Image, Stack, StackDivider, useBreakpointValue } from '@chakra-ui/react';
 import { Container, Box, Heading, Text } from '@chakra-ui/react';
 import Header from '../components/Header';
-import { Highlight } from '@chakra-ui/react';
 import { Card, CardHeader, CardBody, CardFooter } from '@chakra-ui/react';
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react';
-import robocactusv1 from '../assests/ROBOCACTUS_V1.png';
-import robs2 from '../assests/robocactus2.png';
-import robToRight from '../assests/robo-.png';
+import robocactusv1 from '../assets/ROBOCACTUS_V1.png';
+import robs2 from '../assets/robocactus2.png';
+import robToRight from '../assets/robo-.png';
 import Footer from '../components/Footer';
 
 

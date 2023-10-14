@@ -331,8 +331,8 @@ const Modulo1 = () => {
                   </h2>
                   <AccordionPanel pb={4}>
                     <Text fontSize="md" textAlign="justify">
-                      <Text>A Robótica Educacional é uma área interdisciplinar que combina diversos campos do conhecimento, como lógica matemática, mecânica, eletrônica, programação e inteligência artificial.</Text>
-                      <Text>Ela consiste em utilizar a robótica como uma ferramenta pedagógica para integrar os processos de aprendizagem com a prática da construção e programação de robôs. Essa abordagem estimula o pensamento computacional e promove a aprendizagem de forma lúdica e divertida.</Text>
+                      <p>A Robótica Educacional é uma área interdisciplinar que combina diversos campos do conhecimento, como lógica matemática, mecânica, eletrônica, programação e inteligência artificial.</p>
+                      <p>Ela consiste em utilizar a robótica como uma ferramenta pedagógica para integrar os processos de aprendizagem com a prática da construção e programação de robôs. Essa abordagem estimula o pensamento computacional e promove a aprendizagem de forma lúdica e divertida.</p>
                       <br />
                       <Text>
                         <strong>As vantagens de estudar Robótica Educacional são diversas:</strong>

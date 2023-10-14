@@ -2,36 +2,34 @@ import React from 'react';
 import {
     Box,
     Button,
-    ChakraProvider,
     Container,
-    Flex,
     FormControl,
     FormLabel,
     Heading,
+    Image,
     Input,
     Stack,
     Text,
-    useColorModeValue,
 } from '@chakra-ui/react';
 import { useNavigate } from 'react-router';
 import { goToHome } from '../routes/cordinator';
-import Header from '../components/Header'
 import Footer from '../components/Footer';
+import robocactus from '../assets/robocactus.png';  // Corrigido o caminho da imagem
 
 const LoginPage = () => {
     const navigate = useNavigate();
 
     return (
+        <Container maxW="md" mt={8} display="flex" flexDirection="column" alignItems="center">
+            <Image
+                objectFit='cover'
+                maxW={{ base: '100%', sm: '200px' }}
+                maxH='200px'
+                src={robocactus}
+                alt='Caffe Latte'
+                          />
 
-        <Container maxW="md" mt={8} justifyContent="center" alignItems="center"
-        >
-            <Box px={4}>
-                <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-                    ROBOCACTUS APP
-                </Flex>
-            </Box>
-
-            <Box  p={8} borderRadius="md" boxShadow="md" >
+            <Box p={8} borderRadius="md" boxShadow="md" width="100%">
                 <Heading mb={4}>Login</Heading>
                 <form>
                     <Stack spacing={3}>
@@ -55,9 +53,8 @@ const LoginPage = () => {
                     Não tem uma conta? <Text as="span" color="blue.500">cadastre-se</Text>
                 </Text>
             </Box>
-            <Footer ></Footer>
+            <Footer />
         </Container>
-
     );
 };
 
