@@ -36,7 +36,7 @@ const Footer = ({ isMobile }) => {
             </ButtonGroup>
           </Stack>
           <Text fontSize="sm" color="fg.subtle" textAlign="center">
-            &copy; {new Date().getFullYear()} Robôcactus, Todos os direitos reservados.
+            &copy; {new Date().getFullYear()} Robôcactus. Todos os direitos reservados.
           </Text>
         </Stack>
       </Container>

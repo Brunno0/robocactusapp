@@ -1,33 +1,28 @@
-import React from 'react';
-import {
-  SimpleGrid,
-  Stack,
-  StackDivider,
-  useBreakpointValue,
-} from '@chakra-ui/react';
 import {
   Container,
   Box,
   Heading,
   Text,
   Highlight,
-} from '@chakra-ui/react';
-import Header from '../components/Header';
-import AcordeonLesson from '../components/AcordeonLesson';
-import Footer from '../components/Footer';
-import {
   Accordion,
   AccordionItem,
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
+  SimpleGrid,
+  Stack,
+  StackDivider,
+  useBreakpointValue,
 } from '@chakra-ui/react';
+import Header from '../components/Header';
+import AcordeonLesson from '../components/AcordeonLesson';
+import Footer from '../components/Footer';
 import { AddIcon, MinusIcon } from '@chakra-ui/icons';
 import { Card, CardHeader, CardBody } from '@chakra-ui/react';
 import YoutubeCard from '../components/YoutubeCard';
 import TableComponents from '../components/TableComponets';
-import ABB from '../assests/ABB_IRB_6700_0002.png'
-import KUKA from '../assests/KR 6 R900.png'
+import ABB from '../assets/ABB_IRB_6700_0002.png'
+import KUKA from '../assets/KR 6 R900.png'
 const Modulo1 = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
 
@@ -401,9 +396,6 @@ const Modulo1 = () => {
                       <strong> IAs Generativas:</strong> São algoritmos de IA que têm a capacidade de criar novos dados, semelhantes aos dados de treinamento, gerando novas amostras com base nas distribuições de probabilidade dos dados originais. </Text>
 
                     <Text marginTop={"10px"}>Tipos de inteligência artificial: </Text>
-
-
-
                     <SimpleGrid
                       marginTop={"10px"}
                       spacing={4}
@@ -473,12 +465,12 @@ const Modulo1 = () => {
                     </Text>
 
                     <Text marginTop={"10px"} align={"justify"}>
-  Curiosamente, o computador pode realizar muitos cálculos complicados em milissegundos, mas não consegue distinguir uma cadeira de metal de uma de madeira, algo que até uma criança de 3 anos consegue fazer¹. Para que um robô aprenda e compreenda as informações, sua programação e suas partes físicas devem ser capazes de interagir com a realidade. Para isso, a inteligência artificial utiliza conhecimentos de diversas áreas, como psicanálise, filosofia, psicologia, matemática, informática, medicina, entre outros. <strong>Não é uma tarefa fácil, mas estamos avançando e em breve poderemos descobrir máquinas com essa capacidade.</strong>
-</Text>
+                      Curiosamente, o computador pode realizar muitos cálculos complicados em milissegundos, mas não consegue distinguir uma cadeira de metal de uma de madeira, algo que até uma criança de 3 anos consegue fazer¹. Para que um robô aprenda e compreenda as informações, sua programação e suas partes físicas devem ser capazes de interagir com a realidade. Para isso, a inteligência artificial utiliza conhecimentos de diversas áreas, como psicanálise, filosofia, psicologia, matemática, informática, medicina, entre outros. <strong>Não é uma tarefa fácil, mas estamos avançando e em breve poderemos descobrir máquinas com essa capacidade.</strong>
+                    </Text>
 
-<Text marginTop={"10px"} align={"justify"}>
-Toda essa capacidade nos assusta, por isso, precisamos lidar com um nível ético de proteção à espécie humana. <em>Isaac Asimov</em>, inspirado nesse desafio, deixou seu legado na obra de 1950 intitulada "<strong>Eu, Robô</strong>", onde criou a lógica da proteção humana que deve ser aplicada na robótica e na inteligência artificial, resumida nas <strong>3 leis da robótica</strong>. São elas:
-</Text>
+                    <Text marginTop={"10px"} align={"justify"}>
+                      Toda essa capacidade nos assusta, por isso, precisamos lidar com um nível ético de proteção à espécie humana. <em>Isaac Asimov</em>, inspirado nesse desafio, deixou seu legado na obra de 1950 intitulada "<strong>Eu, Robô</strong>", onde criou a lógica da proteção humana que deve ser aplicada na robótica e na inteligência artificial, resumida nas <strong>3 leis da robótica</strong>. São elas:
+                    </Text>
 
                     <Card>
                       <CardHeader>
@@ -511,15 +503,12 @@ Toda essa capacidade nos assusta, por isso, precisamos lidar com um nível étic
                               <strong>Um robô deve proteger sua própria existência, desde que tal proteção não entre em conflito com a Primeira ou a Segunda Lei.</strong>
                             </Text>
                           </Box>
-
-                       
-
                         </Stack>
                       </CardBody>
                     </Card>
                     <Text pt="2" fontSize="sm">
-                              <strong>Parabéns, terminamos o primeiro módulo, vamos para nossa primeira atividade? </strong>
-                            </Text>
+                      <strong>Parabéns, terminamos o primeiro módulo, vamos para nossa primeira atividade? </strong>
+                    </Text>
                   </AccordionPanel>
                 </>
               )}
