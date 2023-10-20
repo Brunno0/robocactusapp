@@ -1,4 +1,4 @@
-import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { FaYoutube } from 'react-icons/fa';
 import { Box, ButtonGroup, Container, IconButton, Stack, Text } from '@chakra-ui/react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 

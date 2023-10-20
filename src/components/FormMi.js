@@ -14,17 +14,19 @@ import {
 import { Card, CardHeader, CardBody } from '@chakra-ui/react';
 import makeRequest from '../hooks/useRequestGptData';  
 import YoutubeCard from './YoutubeCard';  
+import { useForm } from '../hooks/useForm';
+
 
 const FormMi = () => {
-  const [form, setForm] = useState({ q1: '', q2: '', q3: '', q4: '' });
-  const [feedbacks, setFeedbacks] = useState(Array(4).fill(''));
+  const [feedbacks, setFeedbacks] = useState([]); 
+  const { form, onChangeInputs, cleanFields } = useForm({
+    q1: '',
+    q2: '',
+    q3: '',
+    q4: '',
+  });
 
-  const onChangeInputs = (e) => {
-    const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
-  };
-
-  const calculateRows = (text) => {
+   const calculateRows = (text) => {
     return Math.max(3, (text.match(/\n/g) || []).length + 1);
   };
 
@@ -48,13 +50,15 @@ const FormMi = () => {
           ]
         };
 
-        // Chame a função makeRequest ao invés de axios.post
+        
         const response = await makeRequest(input.messages.map(message => message.content).join('\n'));
 
         return response;
       }));
 
       setFeedbacks(feedbacksFromGpt);
+      console.log(feedbacks)
+      cleanFields();
     } catch (error) {
       console.error('Erro ao fazer a requisição para o GPT-3.5:', error);
     }

@@ -1,6 +1,9 @@
 import axios from 'axios';
 
+
+
 const makeRequest = async (inputText) => {
+ // console.log(env.API_KEY)
   try {
     const response = await axios.post('https://api.openai.com/v1/engines/davinci/completions', {
       prompt: inputText,
@@ -8,13 +11,15 @@ const makeRequest = async (inputText) => {
     }, {
       headers: {
         Accept: 'application/json',
-        Authorization: 'Bearer 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', // Substitua pelo seu token de API do GPT-3.5
+        Authorization: `Bearer ${process.env.REACT_APP_GPT_API_KEY}`, // You gpt api in .env
         "Content-Type": 'application/json'
       }
     });
+    
 
     return response.data.choices[0].text;
   } catch (error) {
+    console.log(error)
     throw new Error('Erro ao fazer a requisição para o GPT-3.5');
   }
 };

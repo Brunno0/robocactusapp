@@ -43,7 +43,7 @@ export default function Header() {
         <MenuItem icon={<ChevronRightIcon /> } onClick={()=>goToSobre(navigate)}>
           Sobre
         </MenuItem>
-        <MenuItem icon={<ChevronRightIcon />} >
+        <MenuItem icon={<ChevronRightIcon /> } onClick={()=>goToContato(navigate)}>
           Contato
         </MenuItem>
      
