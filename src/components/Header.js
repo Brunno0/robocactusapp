@@ -16,7 +16,7 @@ import {
   useBreakpointValue,
   
 } from '@chakra-ui/react';
-import robocactus from '../assests/robocactus.png'
+import robocactus from '../assets/robocactus.png'
 import {  ChevronRightIcon, HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
 import { useNavigate } from 'react-router-dom';
 import { goToContato, goToHome, goToLogin, goToSobre } from '../routes/cordinator';
@@ -43,7 +43,7 @@ export default function Header() {
         <MenuItem icon={<ChevronRightIcon /> } onClick={()=>goToSobre(navigate)}>
           Sobre
         </MenuItem>
-        <MenuItem icon={<ChevronRightIcon />} >
+        <MenuItem icon={<ChevronRightIcon /> } onClick={()=>goToContato(navigate)}>
           Contato
         </MenuItem>
      

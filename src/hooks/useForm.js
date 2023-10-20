@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 export const useForm=(inicialState)=>{
-    console.log(inicialState)
+    //console.log(inicialState)
     const [form,setForm] = useState(inicialState)
 
     const onChangeInputs =(event)=>{

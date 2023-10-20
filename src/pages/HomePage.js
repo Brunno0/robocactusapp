@@ -1,34 +1,65 @@
-import React from 'react';
-import { useBreakpointValue } from '@chakra-ui/react';
-import { Container, Box, Heading, Text } from '@chakra-ui/react';
+import { 
+  useBreakpointValue, 
+  Spinner, 
+  Container, 
+  Box, 
+  Heading, 
+  Text 
+} from '@chakra-ui/react';
+
 import Header from '../components/Header';
 import Cards from '../components/Cards';
 import { Highlight } from '@chakra-ui/react';
-import robocactus from '../assests/robocactus.png';
-import project from '../assests/project.png';
-import robs2 from '../assests/robocactus2.png';
+import robocactus from '../assets/robocactus.png';
+import project from '../assets/project.png';
+import robs2 from '../assets/robocactus2.png';
 import Footer from '../components/Footer';
 import { goToMod1 } from '../routes/cordinator';
+import useLoading from '../hooks/useLoading';
 
 const HomePage = () => {
-  
+
   const isMobile = useBreakpointValue({ base: true, md: false });
+  const loading = useLoading();
 
   return (
     <>
       <Header />
 
-      <Box
-                width="100vw"
-                paddingTop="10px"
-                display="flex"
-                flexDirection={"column"}
-                alignItems="center"
-                justifyContent="center"
-            >
+<Box
+  width="100vw"
+  paddingTop="10px"
+  display="flex"
+  flexDirection="column"
+  alignItems="center"
+  justifyContent="center"
+>
+  {loading ? (
+    <Box
+      position="fixed"
+      top="0"
+      left="0"
+      width="100%"
+      height="100%"
+      backgroundColor="rgba(0, 0, 0, 0.6)"
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      zIndex="9999"
+    >
+      <Spinner
+        thickness="4px"
+        speed="0.65s"
+        emptyColor="gray.200"
+        color="teal.100"
+        size="xl"
+      />
+    </Box>
+  ) : (<>
+
         <Container gap={10} maxW={isMobile ? '100%' : '80%'} >
           <Box w="100%" textAlign="justify" maxW="100%">
-            <Heading lineHeight={['tall', 'tall', 'base']} 
+            <Heading lineHeight={['tall', 'tall', 'base']}
               fontSize={['4xl', '4xl', '5xl']}>
               <Text>Saudações!</Text>
               <Highlight
@@ -45,13 +76,14 @@ const HomePage = () => {
                 Vamos iniciar nossa jornada nas áreas da robótica, programação e desenvolvimento de tecnologias.
               </Highlight>
             </Heading>
-  </Box>
+          </Box>
         </Container>
 
         <Container display="flex" flexDirection="column" gap={5} maxW={isMobile ? '100%' : '80%'}>
           <Cards
             title="Módulo I - Vamos falar sobre robótica?"
-            text="Neste módulo, daremos início aos nossos estudos de robótica. Abordaremos tópicos como a robótica industrial, presente em diversos setores da indústria, a robótica educacional, desempenhando um papel importante no ensino e no desenvolvimento de habilidades. Além disso, mergulharemos na fascinante área da inteligência artificial, possibilitando aos robôs tomar decisões e interagir de forma inteligente com o ambiente. Por fim, teremos uma atividade relacionada ao módulo."
+            text=
+            {`Neste módulo, começamos a explorar a robótica, incluindo sua aplicação na indústria e educação. Abordamos também a inteligência artificial e como os robôs interagem de maneira inteligente com o ambiente. O módulo conclui com uma atividade prática relacionada a esses temas.`}
             img={robocactus}
             left={isMobile}
             buttonText="Simbora"
@@ -83,7 +115,10 @@ const HomePage = () => {
             buttonText="Oxe, simbora!"
           />
         </Container>
-            <Footer isMobile={isMobile}></Footer>
+       </> )}
+       {loading ? null : (
+        <Footer />
+      )}
       </Box>
     </>
   );

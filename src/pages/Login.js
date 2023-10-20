@@ -11,6 +11,7 @@ import {
     Stack,
     Text,
 } from '@chakra-ui/react';
+
 import { useNavigate } from 'react-router';
 import { goToHome } from '../routes/cordinator';
 import Footer from '../components/Footer';

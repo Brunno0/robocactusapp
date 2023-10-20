@@ -1,62 +1,75 @@
-import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
-import { useBreakpointValue } from '@chakra-ui/react';
-import { Container, Box, Heading, Text } from '@chakra-ui/react';
+import React, { useEffect } from 'react';
+import {
+  useBreakpointValue,
+  Container,
+  Box,
+  Heading,
+  Text,
+    Image,
+} from '@chakra-ui/react';
+
 import Header from '../components/Header';
-import { Highlight } from '@chakra-ui/react';
+
 import Footer from '../components/Footer';
 
-
 const Contato = () => {
-   
-    const isMobile = useBreakpointValue({ base: true, md: false });
-     useEffect(() => {
-       }, []);
+  const isMobile = useBreakpointValue({ base: true, md: false });
+
+  useEffect(() => {
+    // Coloque aqui qualquer lógica que você deseja executar ao carregar a página.
+  }, []);
 
   return (
     <>
-      <Header />   
-      <Box
-                width="100vw"
-                paddingTop="10px"
-                display="flex"
-                flexDirection={"column"}
-                alignItems="center"
-                justifyContent="center"
-            >
-        <Container gap={10} maxW={isMobile ? '100%' : '80%'} >
-          <Box w="100%" textAlign="justify" maxW="100%">
-            <Heading lineHeight={['tall', 'tall', 'base']} 
-                      fontSize={['4xl', '4xl', '5xl']}>
-              <Text>Saudações!</Text>
-              <Highlight
-                query={['robótica', 'programação', 'desenvolvimento de tecnologias']}
-                styles={{
-                  px: ['1', '2', '3'],
-                  py: ['0.5', '1', '1.5'],
-                  rounded: 'full',
-                  bg: 'teal.100',
-                  fontSize: ['md', 'lg', 'xl'],
-                  lineHeight: ['base', 'tall', 'tall'],
-                }}
-              >
-                Vamos iniciar nossa jornada nas áreas da robótica, programação e desenvolvimento de tecnologias.
-              </Highlight>
-            </Heading>
+      <Header />
 
-          
-            {/* <Heading lineHeight="tall">
-              <Text fontSize="3xl">Jornada:</Text>
-            </Heading> */}
+      <Box
+        width="100vw"
+        paddingTop="10px"
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
+      >
+        <Container gap={10} maxW={isMobile ? '100%' : '80%'}>
+          <Box w="100%" textAlign="justify" maxW="100%">
+            <Heading
+              lineHeight={['tall', 'tall', 'base']}
+              fontSize={['4xl', '4xl', '5xl']}
+            >
+              <Text>Contato: </Text>
+              
+            </Heading>
           </Box>
         </Container>
 
-        <Container display="flex" flexDirection="column" gap={5} maxW={isMobile ? '100%' : '70%'}>
-         
+        <Container
+          display="flex"
+          flexDirection="column"
+          gap={5}
+          maxW={isMobile ? '100%' : '70%'}
+        >
+        
 
+          {/* Exemplo de card para pessoa desenvolvedora */}
+          <Box borderWidth="1px" borderRadius="lg" p={4}>
+            <Image
+              src="https://avatars.githubusercontent.com/u/23034099?v=4"
+              alt="Nome da Pessoa Desenvolvedora"
+              boxSize="150px"
+              mx="auto"
+              borderRadius={"50%"}
+            />
+            <Heading as="h2" size="lg" mt={4}>
+              Bruno Amorim
+            </Heading>
+            <Text mt={2}>Desenvolvedor Web</Text>
+            <Text fontSize={"10"}>Links no rodapé</Text>
+          </Box>
         </Container>
-        <Footer isMobile={isMobile}></Footer>
+        <Footer />
       </Box>
+      
     </>
   );
 };
