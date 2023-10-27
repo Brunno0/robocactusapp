@@ -3,7 +3,6 @@ import axios from 'axios';
 
 
 const makeRequest = async (inputText) => {
- // console.log(env.API_KEY)
   try {
     const response = await axios.post('https://api.openai.com/v1/engines/davinci/completions', {
       prompt: inputText,
