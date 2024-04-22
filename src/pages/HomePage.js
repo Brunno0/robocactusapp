@@ -14,7 +14,7 @@ import robocactus from '../assets/robocactus.png';
 import project from '../assets/project.png';
 import robs2 from '../assets/robocactus2.png';
 import Footer from '../components/Footer';
-import { goToMod1 } from '../routes/cordinator';
+import { goToMod1, goToMod2 } from '../routes/cordinator';
 import useLoading from '../hooks/useLoading';
 
 const HomePage = () => {
@@ -97,6 +97,7 @@ const HomePage = () => {
             img="https://upload.wikimedia.org/wikipedia/commons/7/71/Arduino-uno-perspective-transparent.png"
             left={isMobile}
             buttonText="#Partiu"
+            buttonCordinator={goToMod2}
           />
 
           <Cards

@@ -20,4 +20,6 @@ export const goToMod = (navigate,n) =>{
 export const goToMod1 = (navigate) =>{
     navigate('/modulo1')
 }
-
+export const goToMod2 = (navigate) =>{
+    navigate('/modulo2')
+}

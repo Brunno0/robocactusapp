@@ -5,6 +5,7 @@ import Login from "../pages/Login";
 import Sobre from "../pages/Sobre";
 import Modulo1 from "../pages/Modulo1";
 import Contato from "../pages/Contato";
+import Modulo2 from "../pages/Modulo2"
 
 export default function Router() {
   return (
@@ -16,6 +17,7 @@ export default function Router() {
         <Route path="/login" element={<Login/>} />
         <Route path="/contato" element={<Contato/>} />
         <Route path="/modulo1" element={<Modulo1/>} />
+        <Route path="/modulo2" element={<Modulo2/>}/>
 
       </Routes>
     </BrowserRouter>
