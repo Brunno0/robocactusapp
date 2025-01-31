@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Heading } from '@chakra-ui/react';
-import FormMi from './FormMi'
+import FormM2 from './FormM2'
 import {
     Accordion,
     AccordionItem,
@@ -41,7 +41,7 @@ const AcordeonLesson = ({isMobile}) => {
             }}>
             Texto
         </Highlight> */}
-              <FormMi/>
+              <FormM2/>
     </AccordionPanel>
 </AccordionItem>
 </Accordion>
