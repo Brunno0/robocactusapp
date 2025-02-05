@@ -12,9 +12,10 @@ import {
   AccordionIcon,
   useBreakpointValue,
   Spinner,
+  Image,
 } from '@chakra-ui/react';
 import { AddIcon, MinusIcon } from '@chakra-ui/icons';
-import { Card, CardHeader, CardBody } from '@chakra-ui/react';
+
 
 import Header from '../components/Header';
 import AcordeonLessonM2 from '../components/AcordeonLessonM2';
@@ -22,27 +23,16 @@ import Footer from '../components/Footer';
 import TableComponents from '../components/TableComponets';
 import HighlightText from '../components/HighlightText';
 
-import arduino from '../assets/arduino.png';
+import sensor from '../assets/sensor_ultra.png';
 import arduino_car from '../assets/arduino_uno_caracteristicas.png';
 import software_arduino from '../assets/Apostila_software.png';
 import useLoading from '../hooks/useLoading';
+import YoutubeCard from '../components/YoutubeCard';
 
-const Modulo2 = () => {
+const Modulo3 = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
   const loading = useLoading();
 
-  // Texto estilizado para os pinos de energia
-  const textStyled = (
-    <ol>
-      <li><strong>Pinos de energia - </strong>esses conectores são utilizados para fornecer saídas de tensão de 5V e 3,3V.</li>
-      <li><strong>IOREF - </strong>Este pino é uma referência de entrada/saída. Fornece a referência de tensão na qual o microcontrolador opera, podendo ser adaptada para 3,3V ou 5V.</li>
-      <li><strong>RESET – </strong>Pino conectado ao botão RESET, pode ser utilizado para resetar a placa de forma externa.</li>
-      <li><strong>3,3V – </strong>Fornece tensão de 3,3V para alimentação de shields com corrente máxima de 50 mA.</li>
-      <li><strong>5V – </strong>Fornece tensão de 5V com corrente de 50 mA.</li>
-      <li><strong>GND – </strong>Terra, filtro de densidade neutra.</li>
-      <li><strong>VIN – </strong>Pino para alimentar a placa a partir de uma fonte externa, seja um shield ou uma bateria. Possui um regulador de tensão que estabiliza o valor de entrada em 5V.</li>
-    </ol>
-  );
 
   return (
     <>
@@ -78,7 +68,7 @@ const Modulo2 = () => {
                 fontSize={['4xl', '4xl', '5xl']}
                 mb={4}
               >
-                <Text>Módulo II</Text>
+                <Text>Módulo III</Text>
                 <Highlight
                   query={['robótica', 'programação', 'robótica']}
                   styles={{
@@ -90,7 +80,7 @@ const Modulo2 = () => {
                     lineHeight: ['base', 'tall', 'tall'],
                   }}
                 >
-                  E o Arduino, que tal?
+                   A lógica das máquinas
                 </Highlight>
               </Heading>
             </Box>
@@ -109,34 +99,20 @@ const Modulo2 = () => {
                 <h2>
                   <AccordionButton>
                     <Box as="span" flex="1" textAlign="left">
-                      <Heading size="sm">2. A plataforma Arduino</Heading>
+                      <Heading size="sm">3. Lógica e linguagem de programação</Heading>
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  <Text fontSize="lg" textAlign="justify">
-                    Criado por Massimo Banzi em 2005, na Itália, o Arduino é uma placa eletrônica versátil usada para prototipagem de robôs, testes, modificação e reutilização de componentes conforme necessário. Ele consiste em duas partes principais: hardware, que é a própria placa física, e software, que é o ambiente de desenvolvimento do Arduino.
-                  </Text>
+                <YoutubeCard
+                      title={'A origem dos robôs'}
+                      subTitle={'Canal: A origem das coisas'}
+                      style={{ width: '100%' }}
+                      url={'https://www.youtube.com/embed/5lh3OtqkLMU'}
+                    />
                   <br />
-                  <Text fontSize="lg" textAlign="justify">
-                    Funciona programando o microprocessador, que por sua vez controla o armazenamento, a memória e os circuitos de entrada e saída (portas). Além disso, é possível adicionar outras peças para ampliar sua funcionalidade, conhecidas como Shields (escudos). Esses escudos podem ser diversos, como sensores de presença, sensores de temperatura, receptores GPS, atuadores, displays de cristal líquido (LCD), módulos de controle de motor, Ethernet, wireless, Bluetooth e outros componentes necessários para o seu projeto.
-                  </Text>
-                  <br />
-                  <Text fontSize="lg" textAlign="justify">
-                    Existem vários modelos de Arduino disponíveis no mercado, cada um com funções específicas. Eles são utilizados para uma variedade de aplicações, desde a construção de drones e controles de videogame até microplacas para pequenos sistemas, e até mesmo placas com mais portas para interagir com diversos componentes. Você pode encontrar alguns desses modelos e suas funcionalidades no site:
-                    <a href="https://www.arduino.cc/en/Main/Products" target="_blank" rel="noopener noreferrer"> www.arduino.cc/en/Main/Products</a>
-                  </Text>
-                  <br />
-                  <Text fontSize="lg" textAlign="justify">
-                    Para nossos projetos, optamos pelo Arduino Uno, como mostrado na Figura 1. Esta placa é versátil, acessível e capaz de atender tanto a projetos simples quanto robustos.
-                  </Text>
-                  <br />
-                  <TableComponents
-                    titleOne="Arduino UNO"
-                    img={arduino}
-                    txt1={<Text fontSize="lg" textAlign="justify" />}
-                  />
+                
                 </AccordionPanel>
               </AccordionItem>
 
@@ -147,7 +123,7 @@ const Modulo2 = () => {
                     <h2>
                       <AccordionButton>
                         <Box as="span" flex="1" textAlign="left">
-                          2.1 Hardware Arduino Uno
+                          3.2 Régua eletrônica com Arduino
                         </Box>
                         {isExpanded ? (
                           <MinusIcon fontSize="12px" />
@@ -158,26 +134,19 @@ const Modulo2 = () => {
                     </h2>
                     <AccordionPanel pb={4}>
                       <Text fontSize="lg" textAlign="justify">
-                        A placa Arduino Uno possui atualmente três versões disponíveis. Seu código e design são abertos, o que significa que podem ser facilmente replicados, resultando na existência de várias placas de outros fabricantes no mercado. Vamos explorar algumas das funções e características do seu hardware.
+                      Agora que nosso ambiente está pronto, vamos programar uma régua eletrônica capaz de apresentar a distância em centímetros entre um sensor ultrassônico e um objeto.
                       </Text>
                       <br />
+
+                      <Box maxWidth="100%" height="auto">
+      <Image src={sensor} alt="Descrição da imagem" width="100%" height="auto" />
+    </Box>
                       <TableComponents
                         titleOne="Figura 1 - Arduino Uno"
                         img={arduino_car}
                         txt1={
                           <Text fontSize="lg" textAlign="justify">
-                            <HighlightText letter="A" text="Conector USB - conecta o Arduino ao computador e funciona como fonte de alimentação (5v)." />
-                            <HighlightText letter="B" text="Conector de alimentação (DC) - Jack de alimentação de energia externa. Caso precise utilizar uma fonte externa, ou ainda, não utilizar a porta USB como fonte de energia. A tensão de entrada é de 7 a 20 Volts, porém, tensões maiores que 12v podem ocasionar danos a placa." />
-                            <HighlightText letter="C" text="ATmega16u2 - Microcontrolador responsável por estabelecer a comunicação e tradução dos sinais USB / Serial." />
-                            <HighlightText letter="D" text={textStyled} />
-                            <HighlightText letter="E" text="Portas analógicas - O microcontrolador ATmega328 possui um conversor (A/D) de grandezas de 10 bits de resolução, com a capacidade de converter sinais digitais para analógicos. Essas portas são destinadas ao uso de componentes que trabalham com medidas variando entre 0V e 5V, como por exemplo, um potenciômetro que controla a luminosidade de um LED. Quanto menor o valor, mais fraca será a luz do LED; quanto maior o valor, maior será sua luminosidade." />
-                            <HighlightText letter="F" text="ATmega328P - É o microcontrolador do Arduino Uno. Apesar de pequeno, ele contém circuitos de memória, um processador e interfaces para processamento de informações e gerenciamento das portas de entrada e saída. É no microcontrolador que o código que programamos é armazenado." />
-                            <HighlightText letter="G" text="ICSP do ATmega328P - Os pinos ICSP (In-Circuit Serial Programming) são a porta para programar diretamente os microcontroladores da placa usando o protocolo serial SPI (Serial Peripheral Interface), caso seja necessário modificar o firmware ou o bootloader do microcontrolador." />
-                            <HighlightText letter="H" text="Led de Status – Led que informa se seu Arduino está ligado." />
-                            <HighlightText letter="I" text="LEDs porta 13 e TX e RX – Ao lado da porta 13 há um LED que pode ser utilizado para testes. Já os LEDs TX e RX são responsáveis por sinalizar a transmissão e recepção de dados entre a placa e o computador ou outra placa." />
-                            <HighlightText letter="J" text="Portas digitais – O Arduino Uno possui 14 portas digitais (0 a 13) que trabalham enviando ou recebendo impulsos elétricos com valores lógicos de ligado ou desligado. Seu valor lógico alto, HIGH, é de 5V, e seu nível lógico baixo, LOW, é de 0V. Através dessas portas, controlaremos peças, atuadores, sensores e motores em nossos projetos. Observe que algumas portas estão marcadas com um “~”; essas são as portas PWM (Pulse Width Modulation), capazes de variar a largura de um pulso digital ligado ou desligado para valores entre 0 e 255, possibilitando o controle de velocidade, intensidade de brilho de LEDs, posicionamento de motores, entre outros." />
-                            <HighlightText letter="L" text="ICSP do ATmega16u2 – porta para programar diretamente o microcontrolador ATmega16u2." />
-                            <HighlightText letter="M" text="Botão de Reset – Serve para reiniciar o Arduino, tem o mesmo efeito de desligar e ligar a placa." />
+                           
                             <Text fontSize="lg" textAlign="justify">Ei, Se avexe não!</Text>
                             <Text><strong>Se você esquecer alguma parte, volte aqui e relembre</strong></Text>
                           </Text>
@@ -264,4 +233,4 @@ const Modulo2 = () => {
   );
 };
 
-export default Modulo2;
+export default Modulo3;
