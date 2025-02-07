@@ -13,26 +13,29 @@ import {
   useBreakpointValue,
   Spinner,
   Image,
+  VStack,
+  Flex,
+  IconButton,
 } from '@chakra-ui/react';
 import { AddIcon, MinusIcon } from '@chakra-ui/icons';
-
-
+import { MdClose, MdRemove, MdCropSquare } from 'react-icons/md';
 import Header from '../components/Header';
 import AcordeonLessonM2 from '../components/AcordeonLessonM2';
 import Footer from '../components/Footer';
 import TableComponents from '../components/TableComponets';
 import HighlightText from '../components/HighlightText';
+import YoutubeCard from '../components/YoutubeCard';
+import useLoading from '../hooks/useLoading';
 
 import sensor from '../assets/sensor_ultra.png';
+import sensor_pinos from '../assets/sensor_ultra_pinos.png';
 import arduino_car from '../assets/arduino_uno_caracteristicas.png';
 import software_arduino from '../assets/Apostila_software.png';
-import useLoading from '../hooks/useLoading';
-import YoutubeCard from '../components/YoutubeCard';
+import arduino_com_sensor from '../assets/arduino_com_sensor.png';
 
 const Modulo3 = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
   const loading = useLoading();
-
 
   return (
     <>
@@ -80,7 +83,7 @@ const Modulo3 = () => {
                     lineHeight: ['base', 'tall', 'tall'],
                   }}
                 >
-                   A lógica das máquinas
+                  A lógica das máquinas
                 </Highlight>
               </Heading>
             </Box>
@@ -94,7 +97,7 @@ const Modulo3 = () => {
             mb={10}
           >
             <Accordion allowMultiple>
-              {/* Seção 2: A plataforma Arduino */}
+              {/* Seção 3: Lógica e linguagem de programação */}
               <AccordionItem>
                 <h2>
                   <AccordionButton>
@@ -105,18 +108,17 @@ const Modulo3 = () => {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                <YoutubeCard
-                      title={'A origem dos robôs'}
-                      subTitle={'Canal: A origem das coisas'}
-                      style={{ width: '100%' }}
-                      url={'https://www.youtube.com/embed/5lh3OtqkLMU'}
-                    />
+                  <YoutubeCard
+                    title={'A origem dos robôs'}
+                    subTitle={'Canal: A origem das coisas'}
+                    style={{ width: '100%' }}
+                    url={'https://www.youtube.com/embed/5lh3OtqkLMU'}
+                  />
                   <br />
-                
                 </AccordionPanel>
               </AccordionItem>
 
-              {/* Seção 2.1: Hardware Arduino Uno */}
+              {/* Seção 3.2: Régua eletrônica com Arduino */}
               <AccordionItem>
                 {({ isExpanded }) => (
                   <>
@@ -134,24 +136,212 @@ const Modulo3 = () => {
                     </h2>
                     <AccordionPanel pb={4}>
                       <Text fontSize="lg" textAlign="justify">
-                      Agora que nosso ambiente está pronto, vamos programar uma régua eletrônica capaz de apresentar a distância em centímetros entre um sensor ultrassônico e um objeto.
+                        Agora que nosso ambiente está pronto, vamos programar uma régua eletrônica capaz de apresentar a distância em centímetros entre um sensor ultrassônico e um objeto.
                       </Text>
                       <br />
-
+                      <Text fontSize="lg" textAlign="justify">
+                        <strong>3.2.1 Sensor - HC-SR04</strong>
+                      </Text>
+                      <br />
+                      <Text fontSize="lg" textAlign="justify">
+                        O sensor HC-SR04 emite pulsos sonoros em uma frequência de 40 kHz, que se propagam na velocidade do som. Quando o pulso encontra um objeto, o sinal é refletido e retorna ao sensor na forma de eco. A distância entre o sensor e o objeto é calculada com base no tempo de ida e volta do pulso, semelhante ao sistema de localização de objetos utilizado pelos morcegos.
+                      </Text>
                       <Box maxWidth="100%" height="auto">
-      <Image src={sensor} alt="Descrição da imagem" width="100%" height="auto" />
-    </Box>
-                      <TableComponents
-                        titleOne="Figura 1 - Arduino Uno"
-                        img={arduino_car}
-                        txt1={
-                          <Text fontSize="lg" textAlign="justify">
-                           
-                            <Text fontSize="lg" textAlign="justify">Ei, Se avexe não!</Text>
-                            <Text><strong>Se você esquecer alguma parte, volte aqui e relembre</strong></Text>
+                        <Image src={sensor} alt="sensor HC-SR04" width="100%" height="auto" />
+                      </Box>
+                      <Text fontSize="lg" textAlign="justify">
+                        Esquema elétrico do sensor HC-SR04:
+                      </Text>
+                      <br />
+                      <Box maxWidth="90%" height="auto">
+                        <Image src={sensor_pinos} alt="Esquema elétrico do sensor HC-SR04" width="100%" height="auto" />
+                      </Box>
+                      <Text fontSize="lg" textAlign="justify">
+                        <strong>3.2.2 Conectando o sensor ao Arduino</strong>
+                      </Text>
+                      <br />
+                      <Text fontSize="lg" textAlign="justify">
+                        Para conectar o sensor HC-SR04 ao Arduino, utilizaremos cabos coloridos conhecidos como jumpers. Esses cabos possuem um fio interno de cobre que transmite sinais elétricos de uma extremidade à outra. Caso você não tenha jumpers, uma alternativa é utilizar os fios internos de um cabo de rede (RJ45), independentemente da cor. Acompanhe o esquema do projeto e siga as etapas de montagem indicadas.
+                      </Text>
+                      <br />
+                      <Box maxWidth="100%" height="auto">
+                        <Image src={arduino_com_sensor} alt="conexão arduino e sensor" width="100%" height="auto" />
+                      </Box>
+                      <Box p={5} maxWidth="600px" margin="auto">
+                        <Heading as="h3" size="lg" mb={4} textAlign="center" p={2} borderRadius="md">
+                          Conexão do Sensor HC-SR04 ao Arduino
+                        </Heading>
+                        <br />
+                        {/* Passo 1: Alimentação (VCC) */}
+                        <Flex
+                          direction={{ base: "column", md: "row" }}
+                          align="center"
+                          bg="red.500"
+                          p={3}
+                          borderRadius="md"
+                          mb={3}
+                        >
+                          <Box flex="1" textAlign="center" p={2}>
+                            <Text fontSize="xl" fontWeight="bold" color="white">
+                              1. Alimentação (VCC)
+                            </Text>
+                          </Box>
+                          <Box flex="2" p={2}>
+                            <Text color="white">
+                              Conecte a saída <strong>5V</strong> do Arduino ao pino <strong>VCC</strong> do sensor.
+                            </Text>
+                          </Box>
+                        </Flex>
+                        {/* Passo 2: Terra (GND) */}
+                        <Flex
+                          direction={{ base: "column", md: "row" }}
+                          align="center"
+                          bg="black"
+                          p={3}
+                          borderRadius="md"
+                          mb={3}
+                        >
+                          <Box flex="1" textAlign="center" p={2}>
+                            <Text fontSize="xl" fontWeight="bold" color="white">
+                              2. Terra (GND)
+                            </Text>
+                          </Box>
+                          <Box flex="2" p={2}>
+                            <Text color="white">
+                              Conecte o pino <strong>GND</strong> do Arduino ao pino <strong>GND</strong> do sensor.
+                            </Text>
+                          </Box>
+                        </Flex>
+                        {/* Passo 3: Sinal ECHO */}
+                        <Flex
+                          direction={{ base: "column", md: "row" }}
+                          align="center"
+                          bg="blue.500"
+                          p={3}
+                          borderRadius="md"
+                          mb={3}
+                        >
+                          <Box flex="1" textAlign="center" p={2}>
+                            <Text fontSize="xl" fontWeight="bold" color="white">
+                              3. Sinal ECHO
+                            </Text>
+                          </Box>
+                          <Box flex="2" p={2}>
+                            <Text color="white">
+                              Conecte a porta <strong>4</strong> da placa ao pino <strong>ECHO</strong> do sensor.
+                            </Text>
+                          </Box>
+                        </Flex>
+                        {/* Passo 4: Sinal TRIG */}
+                        <Flex
+                          direction={{ base: "column", md: "row" }}
+                          align="center"
+                          bg="yellow.500"
+                          p={3}
+                          borderRadius="md"
+                          mb={3}
+                        >
+                          <Box flex="1" textAlign="center" p={2}>
+                            <Text fontSize="xl" fontWeight="bold" color="white">
+                              4. Sinal TRIG
+                            </Text>
+                          </Box>
+                          <Box flex="2" p={2}>
+                            <Text color="white">
+                              Conecte a porta <strong>3</strong> da placa ao pino <strong>TRIG</strong> do sensor.
+                            </Text>
+                          </Box>
+                        </Flex>
+                        {/* Nota final */}
+                        <Text mt={4} fontStyle="italic" textAlign="center" bg="gray.100" p={2} borderRadius="md">
+                          Certifique-se de que a placa esteja desligada durante as conexões.
+                        </Text>
+                      </Box>
+                      <Text fontSize="lg" textAlign="justify">
+                        <strong>3.2.3 Codificando nosso projeto</strong>
+                      </Text>
+                      <br />
+                      <Text fontSize="lg" textAlign="justify">
+                        Após montar a parte física do projeto, vamos agora desenvolver o programa.
+                      </Text>
+                      <br />
+                      <Box
+                        bg="gray.800"
+                        borderRadius="md"
+                        overflowX="auto"
+                        maxWidth="100%"
+                        fontFamily="monospace"
+                        color="gray.200"
+                        fontSize={{ base: "sm", md: "md" }}
+                        boxShadow="lg"
+                      >
+                        {/* Barra de título com botões */}
+                        <Flex
+                          bg="gray.700"
+                          p={2}
+                          borderTopRadius="md"
+                          alignItems="center"
+                          justifyContent="space-between"
+                        >
+                          <Flex alignItems="center">
+                            <IconButton
+                              icon={<MdClose />}
+                              size="xs"
+                              aria-label="Fechar"
+                              colorScheme="red"
+                              variant="ghost"
+                              isRound
+                            />
+                            <IconButton
+                              icon={<MdRemove />}
+                              size="xs"
+                              aria-label="Minimizar"
+                              colorScheme="gray"
+                              variant="ghost"
+                              isRound
+                              ml={2}
+                            />
+                            <IconButton
+                              icon={<MdCropSquare />}
+                              size="xs"
+                              aria-label="Maximizar"
+                              colorScheme="gray"
+                              variant="ghost"
+                              isRound
+                              ml={2}
+                            />
+                          </Flex>
+                          <Text fontSize="sm" color="gray.300" ml={2}>
+                            Código Arduino
                           </Text>
-                        }
-                      />
+                        </Flex>
+                        {/* Código Arduino */}
+                        <Box p={4}>
+                          <Text as="pre" whiteSpace="pre-wrap">
+                            {`
+#include <Ultrasonic.h>
+
+Ultrasonic sensor(3, 4);
+
+void setup() {
+    Serial.begin(9600);
+    Serial.println("Lendo dados do sensor...");
+}
+
+void loop() {
+    float centimetros;
+    long microsec = sensor.timing();
+
+    centimetros = sensor.convert(microsec, Ultrasonic::CM);
+
+    Serial.print("Distancia em cm: ");
+    Serial.print(centimetros);
+    delay(1000);
+}
+                            `}
+                          </Text>
+                        </Box>
+                      </Box>
                     </AccordionPanel>
                   </>
                 )}
