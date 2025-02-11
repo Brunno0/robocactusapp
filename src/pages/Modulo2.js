@@ -10,9 +10,6 @@ import {
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
-  SimpleGrid,
-  Stack,
-  StackDivider,
   useBreakpointValue,
   Spinner,
 } from '@chakra-ui/react';
@@ -30,7 +27,7 @@ import arduino_car from '../assets/arduino_uno_caracteristicas.png';
 import software_arduino from '../assets/Apostila_software.png';
 import useLoading from '../hooks/useLoading';
 
-const Modulo1 = () => {
+const Modulo2 = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
   const loading = useLoading();
 
@@ -267,4 +264,4 @@ const Modulo1 = () => {
   );
 };
 
-export default Modulo1;
+export default Modulo2;

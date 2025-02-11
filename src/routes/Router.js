@@ -6,6 +6,7 @@ import Sobre from "../pages/Sobre";
 import Modulo1 from "../pages/Modulo1";
 import Contato from "../pages/Contato";
 import Modulo2 from "../pages/Modulo2"
+import Modulo3 from "../pages/Modulo3";
 
 export default function Router() {
   return (
@@ -18,6 +19,7 @@ export default function Router() {
         <Route path="/contato" element={<Contato/>} />
         <Route path="/modulo1" element={<Modulo1/>} />
         <Route path="/modulo2" element={<Modulo2/>}/>
+        <Route path="/modulo3" element={<Modulo3/>}/>
 
       </Routes>
     </BrowserRouter>

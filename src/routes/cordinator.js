@@ -23,3 +23,6 @@ export const goToMod1 = (navigate) =>{
 export const goToMod2 = (navigate) =>{
     navigate('/modulo2')
 }
+export const goToMod3 = (navigate) =>{
+    navigate('/modulo3')
+}
