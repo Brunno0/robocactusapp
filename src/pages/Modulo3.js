@@ -18,7 +18,7 @@ import {
 } from '@chakra-ui/react';
 import { AddIcon, MinusIcon } from '@chakra-ui/icons';
 import Header from '../components/Header';
-import AcordeonLessonM2 from '../components/AcordeonLessonM2';
+import AcordeonLessonM3 from '../components/AcordeonLessonM3';
 import Footer from '../components/Footer';
 import YoutubeCard from '../components/YoutubeCard';
 import useLoading from '../hooks/useLoading';
@@ -408,7 +408,7 @@ const Modulo3 = () => {
 
             </Accordion>
 
-            <AcordeonLessonM2 isMobile={isMobile} />
+            <AcordeonLessonM3 isMobile={isMobile} />
           </Container>
         </>
       )}
