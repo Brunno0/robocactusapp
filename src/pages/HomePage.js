@@ -14,7 +14,7 @@ import robocactus from '../assets/robocactus.png';
 import project from '../assets/project.png';
 import robs2 from '../assets/robocactus2.png';
 import Footer from '../components/Footer';
-import { goToMod1, goToMod2, goToMod3 } from '../routes/cordinator';
+import { goToMod1, goToMod2, goToMod3, goToMod4 } from '../routes/cordinator';
 import useLoading from '../hooks/useLoading';
 
 const HomePage = () => {
@@ -115,6 +115,7 @@ const HomePage = () => {
             img={robs2}
             left={isMobile}
             buttonText="Oxe, simbora!"
+            buttonCordinator={goToMod4}
           />
         </Container>
        </> )}

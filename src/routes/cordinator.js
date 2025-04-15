@@ -26,3 +26,6 @@ export const goToMod2 = (navigate) =>{
 export const goToMod3 = (navigate) =>{
     navigate('/modulo3')
 }
+export const goToMod4 = (navigate) =>{
+    navigate('/modulo4')
+}
