@@ -20,7 +20,6 @@ export default function Router() {
         <Route path="/modulo1" element={<Modulo1/>} />
         <Route path="/modulo2" element={<Modulo2/>}/>
         <Route path="/modulo3" element={<Modulo3/>}/>
-
       </Routes>
     </BrowserRouter>
   );
