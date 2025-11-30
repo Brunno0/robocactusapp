@@ -287,11 +287,65 @@ const Modulo3 = () => {
                       
                         {/* CODE ARDUINO TEST HOOK */}
 
+<<<<<<< HEAD
+Ultrasonic sensor(3, 4);
+
+void setup() {
+    Serial.begin(9600);
+    Serial.println("Lendo dados do sensor...");
+}
+
+void loop() {
+    float centimetros;
+    long microsec = sensor.timing();
+
+    centimetros = sensor.convert(microsec, Ultrasonic::CM);
+
+    Serial.print("Distancia em cm: ");
+    Serial.print(centimetros);
+    delay(1000);
+}
+                            `}
+
+ 
+
+
+                          </Text>
+                        </Box>
+                      </Box>
+                              <br/>
+                      <Text fontSize="lg" textAlign="justify">                   
+            Salve, embarque o código e visualize os resultados no monitor serial
+                          </Text>
+                    </AccordionPanel>
+                  </>
+                )}
+              </AccordionItem>
+
+              {/* Seção 2.2: Software Arduino */}
+              <AccordionItem>
+                {({ isExpanded }) => (
+                  <>
+                    <h2>
+                      <AccordionButton>
+                        <Box as="span" flex="1" textAlign="left">
+                          2.2 Software Arduino
+                        </Box>
+                        {isExpanded ? (
+                          <MinusIcon fontSize="12px" />
+                        ) : (
+                          <AddIcon fontSize="12px" />
+                        )}
+                      </AccordionButton>
+                    </h2>
+                    <AccordionPanel pb={4}>
+=======
                           <CodeArduinoStyle 
                             title="Código Arduino - Lendo dados do sensor"
                             code={arduinoCode}
                           />
                        <br/>
+>>>>>>> 6a2c000042aeadffff3a880a5fafe27001b5f06e
                       <Text fontSize="lg" textAlign="justify">
                       Salve, embarque o código e visualize os resultados no monitor serial:
                       </Text>
