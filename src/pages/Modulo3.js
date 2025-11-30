@@ -339,9 +339,17 @@ void loop() {
     delay(1000);
 }
                             `}
+
+ 
+
+
                           </Text>
                         </Box>
                       </Box>
+                              <br/>
+                      <Text fontSize="lg" textAlign="justify">                   
+            Salve, embarque o código e visualize os resultados no monitor serial
+                          </Text>
                     </AccordionPanel>
                   </>
                 )}
