@@ -339,17 +339,13 @@ void loop() {
     delay(1000);
 }
                             `}
-
- 
-
-
                           </Text>
                         </Box>
                       </Box>
-                              <br/>
-                      <Text fontSize="lg" textAlign="justify">                   
-            Salve, embarque o código e visualize os resultados no monitor serial
-                          </Text>
+                      <br />
+                      <Text fontSize="lg" textAlign="justify">
+                        Salve, embarque o código e visualize os resultados no monitor serial
+                      </Text>
                     </AccordionPanel>
                   </>
                 )}
@@ -373,7 +369,7 @@ void loop() {
                     </h2>
                     <AccordionPanel pb={4}>
                       <Text fontSize="lg" textAlign="justify">
-                        <p>O programa que utilizaremos para desenvolver nossos códigos é um Ambiente de Desenvolvimento Integrado (IDE, na sigla em inglês). Ele foi projetado especificamente para compilar e enviar códigos para a placa Arduino. O software está disponível gratuitamente no site oficial da plataforma: <a href="https://www.arduino.cc/en/software" target="_blank">https://www.arduino.cc/en/software</a>. Para começar, basta selecionar a versão compatível com o seu sistema operacional, fazer o download e realizar a instalação.</p>
+                        <p>O programa que utilizaremos para desenvolver nossos códigos é um Ambiente de Desenvolvimento Integrado (IDE, na sigla em inglês). Ele foi projetado especificamente para compilar e enviar códigos para a placa Arduino. O software está disponível gratuitamente no site oficial da plataforma: <a href="https://www.arduino.cc/en/software" target="_blank" rel="noreferrer">https://www.arduino.cc/en/software</a>. Para começar, basta selecionar a versão compatível com o seu sistema operacional, fazer o download e realizar a instalação.</p>
                         <p>A linguagem de programação utilizada na plataforma Arduino é baseada em C++, com a inclusão de bibliotecas e funções específicas para facilitar o desenvolvimento de projetos. No ambiente Arduino, os projetos são chamados de <i>sketches</i>. A seguir, vamos explorar esse ambiente. Após a instalação do programa você encontrará a seguinte interface:</p>
                         <br />
                         <TableComponents
@@ -389,35 +385,26 @@ void loop() {
                               <HighlightText letter="S" text="Loop: Após a execução do setup(), a função loop() é chamada. Ela é o núcleo principal do código, onde são programadas as ações e comportamentos dos projetos robóticos. Uma vez que o código é carregado na placa, essa função entra em um ciclo infinito, repetindo os comandos de forma contínua enquanto a placa estiver ligada." />
                               <HighlightText letter="T" text="Console de Compilação: Nessa área, são exibidos os erros de compilação, problemas de comunicação, falhas no carregamento do código e erros de sintaxe. Além de identificar e numerar os erros, o console fornece informações detalhadas que ajudam a diagnosticar e corrigir as falhas, facilitando a busca por soluções." />
                               <HighlightText letter="U" text="Abrir Sketch: Essa função permite abrir um sketch salvo no seu computador ou em um dispositivo de armazenamento externo, como um pendrive ou HD externo. É útil para acessar projetos anteriores ou continuar trabalhos já iniciados." />
-                              <HighlightText 
-                              letter="V" 
-                              text= "Salvar: Esse botão permite salvar as alterações feitas no seu código. É fundamental lembrar de salvar seus sketches em um local seguro e de fácil acesso, como pastas organizadas no computador ou em dispositivos de armazenamento externo, para evitar perdas de dados. "/>
+                              <HighlightText
+                                letter="V"
+                                text="Salvar: Esse botão permite salvar as alterações feitas no seu código. É fundamental lembrar de salvar seus sketches em um local seguro e de fácil acesso, como pastas organizadas no computador ou em dispositivos de armazenamento externo, para evitar perdas de dados. " />
 
-                              <HighlightText 
-                              letter="X" 
-                              text= "Monitor Serial: Essa ferramenta permite a comunicação entre o computador e o Arduino via conexão USB. Com ela, você pode visualizar dados recebidos de sensores ou enviar comandos diretamente para a placa, facilitando a depuração e o controle do seu projeto."/>
-
-                        
+                              <HighlightText
+                                letter="X"
+                                text="Monitor Serial: Essa ferramenta permite a comunicação entre o computador e o Arduino via conexão USB. Com ela, você pode visualizar dados recebidos de sensores ou enviar comandos diretamente para a placa, facilitando a depuração e o controle do seu projeto." />
 
                               <Text fontSize="lg" textAlign="justify"> Ei, Se avexe não! </Text>
-
                               <Text><strong>se você esquecer alguma parte, volte aqui e relembre</strong> </Text>
                               <br />
-                              
-                                            
-                            </Text>} />
-                       
+                            </Text>
+                          }
+                        />
                       </Text>
-                      
                     </AccordionPanel>
                   </>
                 )}
               </AccordionItem>
-
-             
-
             </Accordion>
-
             <AcordeonLessonM2 isMobile={isMobile} />
           </Container>
         </>
@@ -426,7 +413,6 @@ void loop() {
       {loading ? null : (
         <Footer />
       )}
-
     </>
   );
 };
