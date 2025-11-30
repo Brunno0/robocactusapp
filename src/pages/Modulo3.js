@@ -13,43 +13,25 @@ import {
   useBreakpointValue,
   Spinner,
   Image,
-  Flex
-
+  VStack,
+  Flex,
+  IconButton,
 } from '@chakra-ui/react';
 import { AddIcon, MinusIcon } from '@chakra-ui/icons';
+import { MdClose, MdRemove, MdCropSquare } from 'react-icons/md';
 import Header from '../components/Header';
-import AcordeonLessonM3 from '../components/AcordeonLessonM3';
+import AcordeonLessonM2 from '../components/AcordeonLessonM2';
 import Footer from '../components/Footer';
+import TableComponents from '../components/TableComponets';
+import HighlightText from '../components/HighlightText';
 import YoutubeCard from '../components/YoutubeCard';
 import useLoading from '../hooks/useLoading';
 
 import sensor from '../assets/sensor_ultra.png';
 import sensor_pinos from '../assets/sensor_ultra_pinos.png';
-import monitor_serial from '../assets/monitor_serial.png';
+import arduino_car from '../assets/arduino_uno_caracteristicas.png';
+import software_arduino from '../assets/Apostila_software.png';
 import arduino_com_sensor from '../assets/arduino_com_sensor.png';
-import CodeArduinoStyle from '../components/CodeArduinoStyle';
-
-const arduinoCode = `
-#include <Ultrasonic.h>
-
-Ultrasonic sensor(3, 4);
-
-void setup() {
-    Serial.begin(9600);
-    Serial.println("Lendo dados do sensor...");
-}
-
-void loop() {
-    float centimetros;
-    long microsec = sensor.timing();
-
-    centimetros = sensor.convert(microsec, Ultrasonic::CM);
-
-    Serial.print("Distancia em cm: ");
-    Serial.print(centimetros);
-    delay(1000);
-}
-  `;
 
 const Modulo3 = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
@@ -271,7 +253,6 @@ const Modulo3 = () => {
                           </Box>
                         </Flex>
                         {/* Nota final */}
-
                         <Text mt={4} fontStyle="italic" textAlign="center" bg="gray.100" p={2} borderRadius="md">
                           Certifique-se de que a placa esteja desligada durante as conexões.
                         </Text>
@@ -281,13 +262,65 @@ const Modulo3 = () => {
                       </Text>
                       <br />
                       <Text fontSize="lg" textAlign="justify">
-                        Após montar a parte física do projeto, vamos agora desenvolver o programa:
+                        Após montar a parte física do projeto, vamos agora desenvolver o programa.
                       </Text>
                       <br />
-                      
-                        {/* CODE ARDUINO TEST HOOK */}
+                      <Box
+                        bg="gray.800"
+                        borderRadius="md"
+                        overflowX="auto"
+                        maxWidth="100%"
+                        fontFamily="monospace"
+                        color="gray.200"
+                        fontSize={{ base: "sm", md: "md" }}
+                        boxShadow="lg"
+                      >
+                        {/* Barra de título com botões */}
+                        <Flex
+                          bg="gray.700"
+                          p={2}
+                          borderTopRadius="md"
+                          alignItems="center"
+                          justifyContent="space-between"
+                        >
+                          <Flex alignItems="center">
+                            <IconButton
+                              icon={<MdClose />}
+                              size="xs"
+                              aria-label="Fechar"
+                              colorScheme="red"
+                              variant="ghost"
+                              isRound
+                            />
+                            <IconButton
+                              icon={<MdRemove />}
+                              size="xs"
+                              aria-label="Minimizar"
+                              colorScheme="gray"
+                              variant="ghost"
+                              isRound
+                              ml={2}
+                            />
+                            <IconButton
+                              icon={<MdCropSquare />}
+                              size="xs"
+                              aria-label="Maximizar"
+                              colorScheme="gray"
+                              variant="ghost"
+                              isRound
+                              ml={2}
+                            />
+                          </Flex>
+                          <Text fontSize="sm" color="gray.300" ml={2}>
+                            Código Arduino
+                          </Text>
+                        </Flex>
+                        {/* Código Arduino */}
+                        <Box p={4}>
+                          <Text as="pre" whiteSpace="pre-wrap">
+                            {`
+#include <Ultrasonic.h>
 
-<<<<<<< HEAD
 Ultrasonic sensor(3, 4);
 
 void setup() {
@@ -339,130 +372,53 @@ void loop() {
                       </AccordionButton>
                     </h2>
                     <AccordionPanel pb={4}>
-=======
-                          <CodeArduinoStyle 
-                            title="Código Arduino - Lendo dados do sensor"
-                            code={arduinoCode}
-                          />
-                       <br/>
->>>>>>> 6a2c000042aeadffff3a880a5fafe27001b5f06e
                       <Text fontSize="lg" textAlign="justify">
-                      Salve, embarque o código e visualize os resultados no monitor serial:
+                        <p>O programa que utilizaremos para desenvolver nossos códigos é um Ambiente de Desenvolvimento Integrado (IDE, na sigla em inglês). Ele foi projetado especificamente para compilar e enviar códigos para a placa Arduino. O software está disponível gratuitamente no site oficial da plataforma: <a href="https://www.arduino.cc/en/software" target="_blank">https://www.arduino.cc/en/software</a>. Para começar, basta selecionar a versão compatível com o seu sistema operacional, fazer o download e realizar a instalação.</p>
+                        <p>A linguagem de programação utilizada na plataforma Arduino é baseada em C++, com a inclusão de bibliotecas e funções específicas para facilitar o desenvolvimento de projetos. No ambiente Arduino, os projetos são chamados de <i>sketches</i>. A seguir, vamos explorar esse ambiente. Após a instalação do programa você encontrará a seguinte interface:</p>
+                        <br />
+                        <TableComponents
+                          titleOne="Figura 2 - Software Arduino"
+                          img={software_arduino}
+                          txt1={
+                            <Text fontSize="lg" textAlign="justify">
+                              <HighlightText letter="N" text="Menu principal - A barra de menu da IDE conta com uma série de funções importantes como importar códigos de exemplo na aba Arquivos, ou ainda configurar a porta COM de conexão Arduino/computador na aba Ferramentas, entre outras." />
+                              <HighlightText letter="O" text="Verificar/compilar - Essa função é responsável por compilar o código, verificando possíveis erros de sintaxe, semântica e estrutura. Ela analisa se o código está escrito corretamente, identifica a ausência de sinais ou caracteres necessários e aponta falhas que possam comprometer o funcionamento do projeto." />
+                              <HighlightText letter="P" text="Enviar para placa - Após verificar seu Sketch, é com esse botão que embarcamos o código na placa." />
+                              <HighlightText letter="Q" text="Novo Sketch - Cria um novo projeto." />
+                              <HighlightText letter="R" text="Setup: Quando a plataforma é iniciada, a primeira função executada pelo Arduino é o setup(). Nela, são configuradas as portas, bibliotecas, variáveis e todos os parâmetros necessários para o funcionamento do programa. Essa função é executada apenas uma vez, seja ao ligar a placa ou ao resetá-la." />
+                              <HighlightText letter="S" text="Loop: Após a execução do setup(), a função loop() é chamada. Ela é o núcleo principal do código, onde são programadas as ações e comportamentos dos projetos robóticos. Uma vez que o código é carregado na placa, essa função entra em um ciclo infinito, repetindo os comandos de forma contínua enquanto a placa estiver ligada." />
+                              <HighlightText letter="T" text="Console de Compilação: Nessa área, são exibidos os erros de compilação, problemas de comunicação, falhas no carregamento do código e erros de sintaxe. Além de identificar e numerar os erros, o console fornece informações detalhadas que ajudam a diagnosticar e corrigir as falhas, facilitando a busca por soluções." />
+                              <HighlightText letter="U" text="Abrir Sketch: Essa função permite abrir um sketch salvo no seu computador ou em um dispositivo de armazenamento externo, como um pendrive ou HD externo. É útil para acessar projetos anteriores ou continuar trabalhos já iniciados." />
+                              <HighlightText 
+                              letter="V" 
+                              text= "Salvar: Esse botão permite salvar as alterações feitas no seu código. É fundamental lembrar de salvar seus sketches em um local seguro e de fácil acesso, como pastas organizadas no computador ou em dispositivos de armazenamento externo, para evitar perdas de dados. "/>
+
+                              <HighlightText 
+                              letter="X" 
+                              text= "Monitor Serial: Essa ferramenta permite a comunicação entre o computador e o Arduino via conexão USB. Com ela, você pode visualizar dados recebidos de sensores ou enviar comandos diretamente para a placa, facilitando a depuração e o controle do seu projeto."/>
+
+                        
+
+                              <Text fontSize="lg" textAlign="justify"> Ei, Se avexe não! </Text>
+
+                              <Text><strong>se você esquecer alguma parte, volte aqui e relembre</strong> </Text>
+                              <br />
+                              
+                                            
+                            </Text>} />
+                       
                       </Text>
-
-                      <Box maxWidth="50%" height="auto">
-                        <Image src={monitor_serial} alt="conexão arduino e sensor" width="100%" height="auto" />
-                      </Box>
-                      <br/>
-                      <Text fontSize="lg" textAlign="justify">
-                     Vamos ao código!
-                      </Text>
-                      <br/>
-                      <CodeArduinoStyle 
-                            title="Include"
-                            code="#include <Ultrasonic.h>"
-                          />
-                          <br/>
-                      <Text fontSize="lg" textAlign="justify">
-                      <strong>Include -</strong> Aqui, estamos incluindo a biblioteca Ultrasonic em nosso programa. Com isso, todas as funções disponíveis na biblioteca tornam-se acessíveis para utilização.
-                      </Text>
-                     
-                      <br/>
-                      <CodeArduinoStyle 
-                            title="Ultrasonic"
-                            code="Ultrasonic sensor(3, 4);"
-                          />
-                          <br/>
-                      <Text fontSize="lg" textAlign="justify">
-                      <strong> Ultrasonic </strong> - Nessa linha está a configuração da variável “sensor”, indicando que as portas 3 e 4 estão sendo utilizadas como TRIGe ECHO.
-                      </Text>
-                      <br/>
-                      <CodeArduinoStyle 
-                            title="Serial begin"
-                            code="Serial.begin(9600);"
-                          />
-                          <br/>
-                      <Text fontSize="lg" textAlign="justify">
-                      <strong> Serial Begin </strong> - Essa função configura a taxa de comunicação em bits por segundo com o monitor serial, nesse caso 9600.
-                      </Text>
-
-                      <br/>
-                      <CodeArduinoStyle 
-                            title="Serial.println;"
-                            code="Serial.println(''Lendo dados do sensor...'');"
-                          />
-                          <br/>
-                      <Text fontSize="lg" textAlign="justify">
-                      <strong> Serial.println </strong> Com função Serial.println podemos imprimir valores, variáveis, textos e afins. Tal como “printf” em C, ou ainda “System.out.println” em java.
-
-                      </Text>
-                      
-
-                      <br/>
-                      <CodeArduinoStyle 
-                            title="float centimetros"
-                            code="float centimetros;"
-                          />
-                          <br/>
-                      <Text fontSize="lg" textAlign="justify">
-                      <strong> float centimetros </strong> - Aqui declaramos a variável "centímetros"( sem acento) do tipo float, isso  significa que ela pode armazenar valores com ponto flutuante, exemplo : “1,22”.
-
-                      </Text>
-
-
-                      <br/>
-                      <CodeArduinoStyle 
-                            title="long microsec"
-                            code="long microsec = sensor.timing();"
-                          />
-                          <br/>
-                      <Text fontSize="lg" textAlign="justify">
-                    <strong>long microsec</strong> - Nessa linha, estamos declarando a variável microsec do tipo long, que é utilizada para armazenar o tempo em microssegundos retornado pela função sensor.timing(). Essa função faz a leitura do tempo de viagem do sinal do sensor ultrassônico, que é essencial para calcular a distância.
-
-                      </Text>
-
-                      <br/>
-                      <CodeArduinoStyle 
-                            title="centimetros = sensor.convert"
-                            code="centimetros = sensor.convert(microsec, Ultrasonic::CM);"
-                          />
-                          <br/>
-                      <Text fontSize="lg" textAlign="justify">
-                    <strong>sensor.convert(microsec, Ultrasonic::CM)</strong> - A função sensor.convert(microsec, Ultrasonic::CM) converte o valor de tempo em microssegundos (microsec) para uma medida de distância em centímetros. Ela utiliza a constante Ultrasonic::CM para especificar a unidade de medida desejada. O cálculo é baseado na velocidade do som no ar (aproximadamente 0,0343 cm por microssegundo), e o resultado é armazenado na variável centimetros. Esse valor pode ser usado posteriormente no programa para exibir a distância medida, processá-la ou tomar decisões com base nessa informação.
-
-
-
-                      </Text>
-                      
-
-                      <br/>
-                      <CodeArduinoStyle 
-                            title="(''Distancia em cm:'')"
-                            code="Serial.print(''Distancia em cm:'');"
-                          />
-                          <br/>
-                      <Text fontSize="lg" textAlign="justify">
-                    <strong>Serial.print</strong> - Aqui imprimimos a frase "Distancia em cm:" no monitor serial 
-                      </Text>
-
-                      <br/>
-                      <CodeArduinoStyle 
-                            title="(centimetros);"
-                            code="Serial.print(centimetros);"
-                          />
-                          <br/>
-                      <Text fontSize="lg" textAlign="justify">
-                    <strong>Serial.print(centimetros);</strong> - E por fim, imprimimos no monitor serial o valor da variável “centímetros”, ou seja, a distância atual entre o sensor e objeto.
-                    </Text>
                       
                     </AccordionPanel>
                   </>
                 )}
               </AccordionItem>
 
+             
+
             </Accordion>
 
-            <AcordeonLessonM3 isMobile={isMobile} />
+            <AcordeonLessonM2 isMobile={isMobile} />
           </Container>
         </>
       )}
